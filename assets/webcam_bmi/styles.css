@@ -1,0 +1,14 @@
+.removed {
+    display: none;
+  }
+
+#overlay, .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#image{
+  max-width: 624px;
+  max-height: 400px;
+}

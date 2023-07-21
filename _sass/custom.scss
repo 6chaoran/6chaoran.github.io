@@ -1,0 +1,42 @@
+.masthead__inner-wrap {
+	max-width: 2080px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main {
+	max-width: 2080px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.sticky {
+	left: 3em;
+}
+
+.page {
+	font-size: 0.8em;
+}
+
+// remove title underline
+.archive__item a {
+	text-decoration: none;
+}
+// add space on the right
+.list__item {
+	padding-right: 1em;
+}
+// justify the title excerpt
+// .archive__item-excerpt {
+// 	text-align: justify;
+// }
+// remove lines under subtitle
+.archive__subtitle {
+    border-bottom: none;
+}
+// title color
+.archive__item-title {
+	color: #2f7d95;
+	font-size: 1.125em;
+	margin-top: 1.125em;
+}
