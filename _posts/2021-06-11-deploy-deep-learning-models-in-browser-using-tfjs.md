@@ -16,7 +16,7 @@ API is traditionally the default choice of deploying ML models. Backend API and 
 
 Tensorflow.js is an amazing tool that allow deep learning models to be deployed in browser, so that users don’t have to upload their data to server for prediction. Instead the browser downloads a copy of the model from server and make the predictions on user’s end. This approach has a significant advantage on speed of response, so that some real time predictions (e.g. face detection from webcam) are made possible. 
 
-This post focuses on the deployment of trained keras model in browser using Tensorflow.js. If you are interested to know about how the BMI prediction model was trained, you can move to my previous post - [Detect faces and predict BMI, Age and Gender using Keras](/data-story/deep-learning/detect-faces-and-predict-BMI-using-keras/)
+This post focuses on the deployment of trained keras model in browser using Tensorflow.js. If you are interested to know about how the BMI prediction model was trained, you can move to my previous post - [Detect faces and predict BMI, Age and Gender using Keras](/deep-learning/detect-faces-and-predict-BMI-using-keras/)
 
 # 1. Convert Keras model to TF.js model
 
@@ -34,7 +34,7 @@ tfjs.converters.save_keras_model(model, tfjs_target_dir)
 ```
 Converted model should have one `model.json` and one or more `group-shard.bin` files in the target directory. If your keras model is `Functional`, you probably need to modify the `className` from `Functional` to `Model` in the `model.json`, otherwise you will get an error when model is being loaded. Not sure if it will be fixed in future release for tensorflow.js.
 
-![className in model.json](/data-story/assets/images/posts/webcam-bmi-model-classname.png)
+![className in model.json](/assets/images/posts/webcam-bmi-model-classname.png)
 
 # 2. Load TF.js model
 
@@ -63,7 +63,7 @@ The model needs to be hosted to be successfully fetched in the browser. There ar
 
 * The easiest method is using `Live Server` extension in `Visual Studio Code`. Click `Go Live` button on status banner after extension installed and then your local model files can be fetched. 
 
-![Live Server Extension](/data-story/assets/images/posts/webcam-bmi-live-server.png)
+![Live Server Extension](/assets/images/posts/webcam-bmi-live-server.png)
 
 * Alternatively, a separate backend service can be used to host the model files. e.g. in FastAPI, the model files can be mounted using `StaticFiles`.
 
@@ -76,7 +76,7 @@ app.mount("/models", StaticFiles(directory="/your/local/models"), name="models")
 ```
 Once our localhost is live, we can examine the model architect in browser console at `http://localhost:5500/index.html`. If we are able to view the model `summary`, it means that the model is correctly loaded.
 
-![loaded model](/data-story/assets/images/posts/webcam-bmi-load-model.png)
+![loaded model](/assets/images/posts/webcam-bmi-load-model.png)
 
 # 3. Load HTML Element as Tensor
 
@@ -114,7 +114,7 @@ function loadImage(elm) {
 
 In the console, we can call `loadImage(image)` to capture the `Tensor` of the image shown. 
 
-![loaded image](/data-story/assets/images/posts/webcam-bmi-load-image.png)
+![loaded image](/assets/images/posts/webcam-bmi-load-image.png)
 
 
 # 4. Predict from Uploaded Image
@@ -179,7 +179,7 @@ function predictImage() {
 
 After modifying `index.html` and `index.js`, refresh the page and test it out. I just tested with a picture of younger me. The prediction is apparently quite off though.
 
-![predict image](/data-story/assets/images/posts/webcam-bmi-predict-image.png)
+![predict image](/assets/images/posts/webcam-bmi-predict-image.png)
 
 
 # 5. Predict from Webcam
@@ -192,7 +192,7 @@ For the complete implementation (including prediction from webcam), please check
 
 # 6. Live Demo
 
-The developed live demo is available at [here](/data-story/visualization/bmi-prediction-using-tfjs/)
+The developed live demo is available at [here](/visualization/bmi-prediction-using-tfjs/)
 
 # 7. Reference
 
