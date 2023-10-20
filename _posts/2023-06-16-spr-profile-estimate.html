@@ -1,5 +1,5 @@
 ---
-title: "Singapore PR Application Profile Estimate"
+title: "Singapore PR Application Profile Estimate - a Vue demo"
 date: 2023-06-16 23:02:01 +0800
 toc: false
 toc_sticky: false
@@ -8,18 +8,58 @@ categories:
 classes: wide
 tags:
 - javascript
-excerpt: "Singapore PR Application Profile Estimate"
+excerpt: "Singapore PR Application Profile Estimate built with Vue.js"
 ---
 
-<html lang="en">
 
-<iframe 
-    src="https://spr.ichaoran.com" 
-    frameborder="0"
-    allowfullscreen
-    scrolling="auto"
-    style="width:100%;height:780px;overflow:hidden;"
-></iframe>
+<html lang="en">
+<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+    <div style="margin-top: 1rem; margin-right: 2rem; max-width: 800px;">
+        Javascript is fun! <br>
+        I made a webapp with Vue.js to estimate the chance of getting Singapore Permermant Residence
+        based on the profile input.
+        <br>Click the link <a href="https://spr.ichaoran.com">https://spr.ichaoran.com</a> to access full version, which
+        is optimized for both desktop and mobile. <br>
+
+        Alternatively you can scan the following QRcode to reach the site.<br>
+
+        <img src="/assets/images/projects/qrcode_spr.ichaoran.com.png" width="200px">
+    </div>
+    <div id="iphone">
+        <iframe id="sgprapp" src="https://spr.ichaoran.com" frameborder="0" allowfullscreen scrolling="no"></iframe>
+    </div>
+
+    <!-- <div id="screenshot"></div> -->
+</div>
+<style>
+    #iphone {
+        background-image: url("https://i.stack.imgur.com/AR3kw.png");
+        background-repeat: no-repeat;
+        height: 900px;
+        width: 390px;
+        position: relative;
+        margin-left: -30px;
+        /* background-size: cover; */
+    }
+
+    #screenshot {
+        background-image: url("https://i.stack.imgur.com/AR3kw.png");
+        background-repeat: no-repeat;
+        height: 750px;
+        width: 380px;
+        position: relative;
+        background-size: cover;
+    }
+
+    #sgprapp {
+        z-index: 2;
+        position: relative;
+        width: 310px;
+        left: 52px;
+        height: 680px;
+        top: 29px;
+        border-radius: 35px;
+    }
+</style>
 
 </html>
-
