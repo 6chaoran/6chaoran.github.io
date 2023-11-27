@@ -16,8 +16,6 @@ API is traditionally the default choice of deploying ML models. Backend API and 
 
 Tensorflow.js is an amazing tool that allow deep learning models to be deployed in browser, so that users don’t have to upload their data to server for prediction. Instead the browser downloads a copy of the model from server and make the predictions on user’s end. This approach has a significant advantage on speed of response, so that some real time predictions (e.g. face detection from webcam) are made possible. 
 
-This post focuses on the deployment of trained keras model in browser using Tensorflow.js. If you are interested to know about how the BMI prediction model was trained, you can move to my previous post - [Detect faces and predict BMI, Age and Gender using Keras](/deep-learning/detect-faces-and-predict-BMI-using-keras/)
-
 # 1. Convert Keras model to TF.js model
 
 Due to the size constraint of browser, we trained the model in MobileNet<sup>[[1](#ref1)]</sup> instead of VGG16/ResNet50 in previous post.  MobileNet replaces full convolution layers with depth-wise separable layers and point-wise layers to reduce the numbers of parameters in the model. The resulting MobileNet is only 9 MB in size comparing with VGG16 model with size 528 MB<sup>[[3](#ref3)]</sup>.
