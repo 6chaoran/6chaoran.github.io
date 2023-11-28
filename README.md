@@ -5,5 +5,5 @@
 bundle
 
 # make changes and re-build the site
-bundle exec jekyll serve
+bundle exec jekyll serve --incremental
 ```

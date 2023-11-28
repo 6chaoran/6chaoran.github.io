@@ -18,7 +18,8 @@ classes: wide
       {% if category[1].size == i %}
         <li>
           <a href="#{{ category[0] | slugify }}">
-            <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
+            <strong style="background-color: #2f7d95; opacity: 80%;
+            color: white; border-radius: 2rem; padding: 0 0.5rem;">{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
           </a>
         </li>
       {% endif %}
@@ -30,7 +31,7 @@ classes: wide
   {% for category in site.categories %}
     {% if category[1].size == i %}
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
-        <h2 class="archive__subtitle">{{ category[0] }}</h2>
+        <h2 class="archive__subtitle" style="text-transform: capitalize;">{{ category[0] }}</h2>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
           {% for post in category.last %}
             {% include archive-single.html type=page.entries_layout %}

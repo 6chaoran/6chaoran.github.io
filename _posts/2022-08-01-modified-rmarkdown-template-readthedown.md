@@ -1,5 +1,5 @@
 ---
-title: "Modified `readthedown` RMarkdown template for stylish analytical documents"
+title: "readthedown: A modified RMarkdown template for stylish analytical documents"
 date: 2022-08-01 19:30:01 +0800
 classes: wide
 categories:
