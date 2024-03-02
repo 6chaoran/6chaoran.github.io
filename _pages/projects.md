@@ -1,13 +1,13 @@
 ---
 layout: single
-title: "Featured Projects"
+title: "🚀 Featured Projects"
 permalink: /projects/
 author_profile: true
 classes: wide
 
 summarytools:
   - image_path: assets/images/projects/summarytools-header.png    
-    alt: "placeholder image 3"
+    alt: "screenshot of summarytools python package"
     title: "DataFrame Summary Tool in Jupyter Notebook"
     excerpt: 'Inspired by R summarytools package, I replicated a similar package in Jupyter Notebook. 
     
@@ -16,7 +16,7 @@ summarytools:
     * Check [https://github.com/6chaoran/jupyter-summarytools](https://github.com/6chaoran/jupyter-summarytools) for the source code.
     
     
-    Click `Read More` to continue with the post.'
+    👇 Click `Read More` to continue with the post.'
 
     url: "/visualization/summarytools-for-jupyter-notebook/"
     btn_label: "Read More"
@@ -24,7 +24,7 @@ summarytools:
 
 
 deepfm:
-  - image_path: https://www.researchgate.net/profile/Huifeng_Guo/publication/318829508/figure/fig1/AS:522607722467328@1501610798143/Wide-deep-architecture-of-DeepFM-The-wide-and-deep-component-share-the-same-input-raw.png  
+  - image_path: assets/images/projects/sprapp.png     
     alt: "placeholder image 1"
     title: "Implement DeepFM model using Keras"
     excerpt: '
@@ -49,7 +49,26 @@ Later, on top of wide & deep learning, deepfm was developed combining DNN model 
   #page-title {
     margin: 20px 0 40px 0;
   }
-.page__content .archive__item-title {
-  margin-top: 0;
-}
+
+  .archive__item {
+    display: flex;
+    flex-wrap: wrap
+  }
+
+  .archive__item-teaser {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .archive__item-body {
+    margin-left: 1rem;
+  }
+
+  .page__content .archive__item-title {
+    margin-top: 0;
+  }
+
+  .btn--primary {
+    background-color: #2f7d95;
+  }
 </style>

@@ -26,6 +26,7 @@
       {% endif %}
       {% if forloop.last %}
         <li class="current">{{ page.title }}</li>
+        <!-- <li class="current">current page</li> -->
       {% else %}
         {% assign i = i | plus: 1 %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -37,3 +38,9 @@
     {% endfor %}
   </ol>
 </nav>
+
+<style>
+  .breadcrumbs {
+    max-width: 100%;
+  }
+</style>
