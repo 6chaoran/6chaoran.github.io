@@ -3,25 +3,23 @@ permalink: /about/
 title: "About"
 layout: single
 classes: wide
-last_modified_at: 2017-02-14T14:28:13-05:00
+locale:
+    name: 简体中文
+    url: /about/zh/
+last_modified_at: 2024-04-05T14:28:13-05:00
 author_profile: true
 ---
 
 ### About Me
 
-My name is Chaoran, from China and currently residing in Singapore.   
-I used to be an Engineer with background of B.Eng Chemical Engineering and M.Sc. Industrial Engineering.    
-But now I am a big fan of Data Science.
+Greetings! I'm Chaoran, a Chinese expat currently calling Singapore home. In a past life, I delved into the world of engineering, wielding a B.Eng in Chemical Engineering and an M.Sc. in Industrial Engineering. However, somewhere along the way, I found myself falling head over heels for the enchanting realm of Data Science.
 
 
 ### About this Blog
 
-I started this blog since Jan 2015, when I started my self-learning of data science. Having explored multiple online courses, quora threads, websites, textbooks, I was toddling in the sea of new things. The primary motivation of this blog to note down the learning journey and to summarize the useful stuffs I found.
+Welcome to my digital domain, a haven I established back in Jan 2015 as I embarked on my journey into the depths of data science. Picture this: me, navigating through countless online courses, Quora threads, websites, and textbooks, feeling like a modern-day Magellan charting new territories.
 
-I believe the best way to learn is to teach and to share. Hope this blog may help someone, who is also learning data science,  in any sense.
+Why did I start this blog? Well, it dawned on me that the best way to cement my newfound knowledge was to document it. Thus, this blog serves as a testament to my learning odyssey and a treasure trove of insights and discoveries I've unearthed along the way.
 
-### Contact Me
-
-* [my resume](https://6chaoran.github.io/data-story/cv/)
-* [chaoran.liu@icloud.com](mailto:chaoran.liu@icloud.com)
+I firmly believe that knowledge is most potent when shared. So, whether you're a fellow data science enthusiast or simply curious, I hope my musings and findings spark a flicker of enlightenment in your journey. After all, we're all in this wondrous world of data together!
 
