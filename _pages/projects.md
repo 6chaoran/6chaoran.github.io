@@ -7,6 +7,7 @@ classes: wide
 
 summarytools:
   - image_path: assets/images/projects/summarytools-header.png    
+    project_url: https://github.com/6chaoran/jupyter-summarytools
     alt: "screenshot of summarytools python package"
     title: "DataFrame Summary Tool in Jupyter Notebook"
     excerpt: |
@@ -22,7 +23,8 @@ summarytools:
     btn_class: "btn--primary"
 
 sgpr-profiler:
-  - image_path: assets/images/projects/sprapp.png     
+  - image_path: assets/images/projects/sprapp.png   
+    project_url: https://spr.ichaoran.com
     alt: "SGPR Profiler webapp screenshot"
     title: "Singapore PR Profile Accessment App"
     excerpt: |
@@ -37,7 +39,8 @@ sgpr-profiler:
 
 
 sgp1:
-  - image_path: assets/images/projects/sgp1.png    
+  - image_path: assets/images/projects/sgp1.png  
+    project_url: https://sgp1.ichaoran.com  
     alt: "SGP1 webapp screenshot"
     title: "Singapore Primary School Registration Companion"
     excerpt: | 
@@ -52,7 +55,8 @@ sgp1:
     # btn_class: 'btn--primary'
 
 med-doc-parser:
-  - image_path: assets/images/projects/med-doc-parser.png    
+  - image_path: assets/images/projects/med-doc-parser.png   
+    project_url: https://med-doc-parser.ichaoran.com 
     alt: "MedDoc Parser webapp screenshot"
     title: "MedDoc Parser"
     excerpt: | 
@@ -82,6 +86,8 @@ med-doc-parser:
     min-width: 380px; */
     border: 1px solid;
     border-radius: 0.5rem;
+    max-height: 300px;
+    background-position: center;
   }
 
   /* .archive__item {
