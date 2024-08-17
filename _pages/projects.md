@@ -28,9 +28,7 @@ sgpr-profiler:
     alt: "SGPR Profiler webapp screenshot"
     title: "Singapore PR Profile Accessment App"
     excerpt: |
-      SGPR Profiler is a profile assessment web app designed to estimate the odds of obtaining PR residency based on voluntarily contributed past records. In this app, users are allowed to view recent application profiles contributed by others. Some high-level insights/statistics are also provided for quick reference.
-
-      👉 Visit the <a href="https://spr.ichaoran.com" target="_blank">link</a> to get started.
+      SGPR Profiler is a profile assessment web app designed to estimate the odds of obtaining PR residency based on voluntarily contributed past records. In this app, users are allowed to view recent application profiles contributed by others. Some high-level insights/statistics are also provided for quick reference. 👉 Visit the <a href="https://spr.ichaoran.com" target="_blank">link</a> to get started.
 
       👇 Click `Read More` to continue with the post.
     url: "/visualization/sgprprofile-vue-demo/"
@@ -58,7 +56,7 @@ med-doc-parser:
   - image_path: assets/images/projects/med-doc-parser.png   
     project_url: https://med-doc-parser.ichaoran.com 
     alt: "MedDoc Parser webapp screenshot"
-    title: "MedDoc Parser"
+    title: "Medical Document Parser"
     excerpt: | 
       In Singapore, I've noticed a common challenge: our medical lab reports are often still in non-digital formats, making it tough to manage our health data effectively. Inspired by this, I've developed a web app, which allows users to effortlessly convert photos of their medical reports into organized tables, enabling easier analysis of the health history. I'm excited to share this tool, hoping it can help others navigate their health journeys with greater ease.
 
@@ -88,6 +86,10 @@ med-doc-parser:
     border-radius: 0.5rem;
     max-height: 300px;
     background-position: center;
+  }
+
+ .feature__wrapper .archive__item-title {
+    margin-top: 0;
   }
 
   /* .archive__item {

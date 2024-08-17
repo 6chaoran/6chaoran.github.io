@@ -12,7 +12,16 @@
 </script>
 
 <!-- For all browsers -->
+<!-- Light mode -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- Dark mode -->
+{% if site.minimal_mistakes_skin_dark %}
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("{{ '/assets/css/main2.css' | relative_url }}") (prefers-color-scheme: dark);
+  </style>
+{% endif %}
 
 <!--[if IE]>
   <style>
