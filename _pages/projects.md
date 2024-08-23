@@ -17,8 +17,23 @@ summarytools:
     
       👉 Check [https://github.com/6chaoran/jupyter-summarytools](https://github.com/6chaoran/jupyter-summarytools) for the source code.
         
-      👇 Click `Read More` to continue with the post.'
+      👇 Click `Read More` to continue with the post.
     url: "/visualization/summarytools-for-jupyter-notebook/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+
+vital-sign-prediction:
+  - image_path: assets/images/projects/header-vital-sign-prediction.png
+    alt: "screenshot of vital sign prediction demo"
+    title: "A live demo of predictive vital measurement"
+    excerpt: |
+      A simple demonstration of vital sign prediction—covering age, BMI, heart rate, and respiratory rate—utilizing rPPG and facial recognition technology. This demo employs edge deployment via TensorFlow.js, ensuring that all data remains securely processed on your local device.
+
+      👉 Visit the <a href="https://www.ichaoran.com/visualization/bmi-prediction-using-tfjs/" target="_blank">link</a> to get started.
+
+      👇 Click `Read More` to continue with the post.
+    url: "/visualization/deep-learning/deploy-deep-learning-models-in-browser-using-tfjs/"
+    project_url: "/visualization/bmi-prediction-using-tfjs/"
     btn_label: "Read More"
     btn_class: "btn--primary"
 
@@ -68,6 +83,7 @@ med-doc-parser:
 
 ---
 {% include feature_row id="summarytools" type="left" %}
+{% include feature_row id="vital-sign-prediction" type="left" %}
 {% include feature_row id="sgpr-profiler" type="left" %}
 {% include feature_row id="sgp1" type="left" %}
 {% include feature_row id="med-doc-parser" type="left" %}
