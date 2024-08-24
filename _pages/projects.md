@@ -18,7 +18,7 @@ summarytools:
       👉 Check [https://github.com/6chaoran/jupyter-summarytools](https://github.com/6chaoran/jupyter-summarytools) for the source code.
         
       👇 Click `Read More` to continue with the post.
-    url: "/visualization/summarytools-for-jupyter-notebook/"
+    url: "/posts/2021-03-11-summarytools-for-jupyter-notebook/"
     btn_label: "Read More"
     btn_class: "btn--primary"
 
@@ -29,11 +29,11 @@ vital-sign-prediction:
     excerpt: |
       A simple demonstration of vital sign prediction—covering age, BMI, heart rate, and respiratory rate—utilizing rPPG and facial recognition technology. This demo employs edge deployment via TensorFlow.js, ensuring that all data remains securely processed on your local device.
 
-      👉 Visit the <a href="https://www.ichaoran.com/visualization/bmi-prediction-using-tfjs/" target="_blank">link</a> to get started.
+      👉 Visit the <a href="https://www.ichaoran.com/posts/2021-06-11-bmi-prediction-using-tfjs/" target="_blank">link</a> to get started.
 
       👇 Click `Read More` to continue with the post.
-    url: "/visualization/deep-learning/deploy-deep-learning-models-in-browser-using-tfjs/"
-    project_url: "/visualization/bmi-prediction-using-tfjs/"
+    url: "/posts/2021-06-11-deploy-deep-learning-models-in-browser-using-tfjs/"
+    project_url: "/posts/2021-06-11-bmi-prediction-using-tfjs/"
     btn_label: "Read More"
     btn_class: "btn--primary"
 
@@ -46,7 +46,7 @@ sgpr-profiler:
       SGPR Profiler is a profile assessment web app designed to estimate the odds of obtaining PR residency based on voluntarily contributed past records. In this app, users are allowed to view recent application profiles contributed by others. Some high-level insights/statistics are also provided for quick reference. 👉 Visit the <a href="https://spr.ichaoran.com" target="_blank">link</a> to get started.
 
       👇 Click `Read More` to continue with the post.
-    url: "/visualization/sgprprofile-vue-demo/"
+    url: "/posts/2023-06-16-sgprprofile-vue-demo/"
     btn_label: "Read More"
     btn_class: "btn--primary"
 
