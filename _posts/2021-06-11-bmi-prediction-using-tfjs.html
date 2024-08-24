@@ -1,5 +1,5 @@
 ---
-title: "Live Demo of predictive vital measurement from browser using Tensorflow.js"
+title: "Live demo of predictive vital measurement from browser using Tensorflow.js"
 date: 2021-06-11 17:30:01 +0800
 toc: false
 toc_sticky: false
@@ -14,19 +14,32 @@ excerpt: "An example of deploying deep learning model in browser using tensorflo
 <html lang="en">
 
 <div style="margin-bottom: 1rem; display: flex; justify-content: center;">
-    <img src="/assets/images/projects/vital-sign-prediction.gif" alt="instructions for demo of using vital sign prediction"></img>
+    <img id="loadingGif" src="/assets/images/projects/vital-sign-prediction.gif" alt="instructions for demo of using vital sign prediction"></img>
 </div>
 
+<hr>
+
 <div>
-    <p>Now try yourself to predict your own age, BMI and resting heart rate ...</p>
+    <p>Now try yourself to predict your own age, BMI, and resting heart rate ...</p>
 </div>
+
 <iframe 
+    id="predictionIframe"
     src="/assets/vital-signs-predict/" 
     frameborder="0"
     allowfullscreen
     scrolling="no"
     allowtransparency="true"
-    style="width:100%;height:780px;overflow:hidden;"
+    style="width:100%;height:780px;overflow:hidden;display:none;" <!-- Initially hidden -->
 ></iframe>
+
+<script>
+    // Wait for the GIF to fully load
+    document.getElementById('loadingGif').addEventListener('load', function() {
+        // Show the iframe after the GIF is loaded
+        document.getElementById('predictionIframe').style.display = 'block';
+    });
+</script>
+
 
 </html>
