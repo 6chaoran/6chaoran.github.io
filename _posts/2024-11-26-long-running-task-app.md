@@ -157,5 +157,6 @@ setInterval(this.getTasks, 1000)
 
 # Quick start
 
-For a detailed walkthrough, visit my [GitHub repository]((https://github.com/6chaoran/fastapi-vue-app/tree/master/task-app)).
+For a detailed walkthrough, 
+visit my [GitHub repository](https://github.com/6chaoran/fastapi-vue-app/tree/master/task-app).
 
