@@ -5,6 +5,8 @@ toc: true
 toc_sticky: true
 categories:
 - thoughts
+- LLM
+- OCR
 excerpt: "Processing scanned claim PDFs used to be “good enough” if the text was mostly readable. In the GenAI era, that’s no longer true: if OCR misses a checkbox, scrambles a table, or loses layout context, the document becomes unreliable for extraction, retrieval, and automated decisions. Insurance makes this worse—many documents are old, low-quality scans with handwriting and dense forms—so we need evaluation that reflects real usability, not just character-perfect transcription." 
 --- 
 
@@ -72,3 +74,5 @@ We also explored combining traditional OCR and VLMs to get the best of both worl
 
 1. Feed the page image *and* OCR’ed text/Markdown into a VLM, with prompts designed to correct foreseeable OCR issues.
 2. Use layout-aware OCR to segment the page, then route only low-confidence regions (bounding boxes/segments) to a VLM—balancing quality gains against VLM cost.
+
+Finally, evaluation shouldn’t be a one-and-done exercise. As OCR models improve (or as your ingestion mix shifts), new failure modes will surface—new templates, lower-quality scans, handwriting styles, stamps, and table layouts. Your benchmark should evolve with these realities: continuously add fresh, challenging examples and refine the scoring rubric so the test stays representative and discriminative. When the benchmark becomes “too easy,” that’s the signal to raise the bar and upgrade the evaluation—not to declare victory.
