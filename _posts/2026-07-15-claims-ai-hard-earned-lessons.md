@@ -54,7 +54,7 @@ The key is to set up measurement early and align on it with business stakeholder
 
 In this project, we didn’t do this well. Validation was dominated by anecdotal claim-by-claim review. Feedback was captured as free-text comments (“suggestions/defects”) without consistent labels, which made it hard to track progress over time or to pinpoint which component (OCR, routing, retrieval, or the LLM) needed improvement.
 
-If I were to do it again, I would push for a simple, tangible north-star metric from the start—for example, the claim decision **Accept | Reject | Refer**, compared against historical business-as-usual (BAU) outcomes on a curated sample. It won’t be a perfect comparison (information completeness differs; technical vs. operational decisions aren’t identical), but it forces clarity and creates a baseline you can improve.
+If I were to do it again, I would push for a simple, tangible north-star metric from the start—for example, the claim decision **{Accept, Reject, Refer}**, compared against historical business-as-usual (BAU) outcomes on a curated sample. It won’t be a perfect comparison (information completeness differs; technical vs. operational decisions aren’t identical), but it forces clarity and creates a baseline you can improve.
 
 From there, the evaluation can expand into diagnostic metrics for each layer of the pipeline, while remaining anchored to the original decision-level outcome.
 
