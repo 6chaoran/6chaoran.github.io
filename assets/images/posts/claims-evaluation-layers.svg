@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-labelledby="title desc">
+  <title id="title">Evaluation layers for a GenAI claims-assessment system</title>
+  <desc id="desc">A decision-level north-star metric is supported by answer quality, pipeline accuracy, and document quality metrics.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #16324f; }
+    .eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 1.4px; }
+    .heading { font-size: 22px; font-weight: 700; }
+    .detail { font-size: 16px; fill: #425466; }
+    .top { fill: #167d7f; stroke: #0f6668; stroke-width: 2; }
+    .top-text { fill: #ffffff; }
+    .middle { fill: #e8f1f5; stroke: #91aabd; stroke-width: 2; }
+    .base { fill: #f6f8fb; stroke: #c8d3df; stroke-width: 2; }
+    .line { stroke: #7d91a6; stroke-width: 3; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #e7edf3; }
+      .detail { fill: #bdc9d4; }
+      .middle { fill: #203747; stroke: #7891a5; }
+      .base { fill: #172432; stroke: #53687c; }
+      .line { stroke: #8fa4b7; }
+    }
+  </style>
+
+  <text class="eyebrow" x="360" y="30" text-anchor="middle">ONE OUTCOME, MULTIPLE DIAGNOSTIC LAYERS</text>
+
+  <rect class="top" x="155" y="55" width="410" height="82" rx="12"/>
+  <text class="heading top-text" x="360" y="88" text-anchor="middle">North-star outcome</text>
+  <text class="detail top-text" x="360" y="116" text-anchor="middle">Accept · Reject · Refer</text>
+
+  <line class="line" x1="360" y1="137" x2="360" y2="165"/>
+
+  <rect class="middle" x="75" y="165" width="570" height="88" rx="12"/>
+  <text class="heading" x="360" y="199" text-anchor="middle">Answer quality</text>
+  <text class="detail" x="360" y="227" text-anchor="middle">Groundedness · disclosures · inconsistency detection</text>
+
+  <line class="line" x1="360" y1="253" x2="360" y2="281"/>
+
+  <rect class="base" x="50" y="281" width="290" height="112" rx="12"/>
+  <text class="heading" x="195" y="322" text-anchor="middle">Pipeline accuracy</text>
+  <text class="detail" x="195" y="352" text-anchor="middle">Classification · routing</text>
+  <text class="detail" x="195" y="376" text-anchor="middle">retrieval</text>
+
+  <rect class="base" x="380" y="281" width="290" height="112" rx="12"/>
+  <text class="heading" x="525" y="322" text-anchor="middle">Document quality</text>
+  <text class="detail" x="525" y="352" text-anchor="middle">OCR · extraction</text>
+  <text class="detail" x="525" y="376" text-anchor="middle">source completeness</text>
+</svg>

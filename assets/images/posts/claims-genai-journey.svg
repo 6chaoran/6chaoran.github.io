@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-labelledby="title desc">
+  <title id="title">The journey from a manual GenAI demo to a production-ready claims workflow</title>
+  <desc id="desc">Four connected stages: simplify the manual prototype, define measurements, refactor for change, and build fast and slow feedback loops.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #16324f; }
+    .eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 1.4px; }
+    .heading { font-size: 23px; font-weight: 700; }
+    .detail { font-size: 17px; fill: #425466; }
+    .number { font-size: 18px; font-weight: 700; fill: #ffffff; }
+    .card { fill: #f6f8fb; stroke: #c8d3df; stroke-width: 2; }
+    .accent { fill: #167d7f; }
+    .arrow { fill: none; stroke: #7d91a6; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #e7edf3; }
+      .detail { fill: #bdc9d4; }
+      .card { fill: #172432; stroke: #53687c; }
+      .arrow { stroke: #8fa4b7; }
+    }
+  </style>
+
+  <text class="eyebrow" x="360" y="30" text-anchor="middle">FROM DEMO TO PRODUCTION</text>
+
+  <rect class="card" x="50" y="55" width="620" height="82" rx="12"/>
+  <circle class="accent" cx="92" cy="96" r="22"/>
+  <text class="number" x="92" y="102" text-anchor="middle">1</text>
+  <text class="heading" x="130" y="88">Simplify the prototype</text>
+  <text class="detail" x="130" y="116">Automate the existing workflow before optimizing it</text>
+
+  <path class="arrow" d="M360 137v24m-8-8 8 8 8-8"/>
+
+  <rect class="card" x="50" y="166" width="620" height="82" rx="12"/>
+  <circle class="accent" cx="92" cy="207" r="22"/>
+  <text class="number" x="92" y="213" text-anchor="middle">2</text>
+  <text class="heading" x="130" y="199">Define the measurements</text>
+  <text class="detail" x="130" y="227">Agree on success before scaling the solution</text>
+
+  <path class="arrow" d="M360 248v24m-8-8 8 8 8-8"/>
+
+  <rect class="card" x="50" y="277" width="620" height="82" rx="12"/>
+  <circle class="accent" cx="92" cy="318" r="22"/>
+  <text class="number" x="92" y="324" text-anchor="middle">3</text>
+  <text class="heading" x="130" y="310">Refactor continuously</text>
+  <text class="detail" x="130" y="338">Keep experiments fast without destabilizing the core</text>
+
+  <path class="arrow" d="M360 359v24m-8-8 8 8 8-8"/>
+
+  <rect class="card" x="50" y="388" width="620" height="82" rx="12"/>
+  <circle class="accent" cx="92" cy="429" r="22"/>
+  <text class="number" x="92" y="435" text-anchor="middle">4</text>
+  <text class="heading" x="130" y="421">Build two feedback loops</text>
+  <text class="detail" x="130" y="449">Combine engineering speed with domain depth</text>
+</svg>

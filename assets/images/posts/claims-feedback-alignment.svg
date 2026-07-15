@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 650" role="img" aria-labelledby="title desc">
+  <title id="title">Two feedback loops feeding a contextual alignment layer</title>
+  <desc id="desc">A fast AI and data-science loop and a slower domain-expert loop improve tests, metrics, and contextual guidance. The main assessment is checked by an alignment step that retrieves only applicable patches.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #16324f; }
+    .eyebrow { font-size: 14px; font-weight: 500; letter-spacing: 1.4px; }
+    .heading { font-size: 21px; font-weight: 500; }
+    .subheading { font-size: 19px; font-weight: 500; }
+    .detail { font-size: 16px; fill: #425466; }
+    .small { font-size: 14px; fill: #425466; }
+    .fast { fill: #e8f1f5; stroke: #3a6ea5; stroke-width: 2; }
+    .slow { fill: #fff4e5; stroke: #d9822b; stroke-width: 2; }
+    .store { fill: #f6f8fb; stroke: #91aabd; stroke-width: 2; }
+    .active { fill: #167d7f; stroke: #0f6668; stroke-width: 2; }
+    .active-text { fill: #ffffff; }
+    .arrow { fill: none; stroke: #7d91a6; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .dashed { stroke-dasharray: 8 7; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #e7edf3; }
+      .detail, .small { fill: #bdc9d4; }
+      .fast { fill: #203747; stroke: #6d9bcc; }
+      .slow { fill: #3b3020; stroke: #d99a56; }
+      .store { fill: #172432; stroke: #7891a5; }
+      .arrow { stroke: #8fa4b7; }
+    }
+  </style>
+
+  <text class="eyebrow" x="360" y="30" text-anchor="middle">TWO LOOPS, ONE IMPROVEMENT SYSTEM</text>
+
+  <rect class="fast" x="40" y="55" width="300" height="112" rx="12"/>
+  <text class="heading" x="190" y="91" text-anchor="middle">Fast engineering loop</text>
+  <text class="detail" x="190" y="120" text-anchor="middle">Automated tests · cached states</text>
+  <text class="detail" x="190" y="145" text-anchor="middle">MLflow experiments</text>
+
+  <rect class="slow" x="380" y="55" width="300" height="112" rx="12"/>
+  <text class="heading" x="530" y="91" text-anchor="middle">Deep domain loop</text>
+  <text class="detail" x="530" y="120" text-anchor="middle">Claims review · citations</text>
+  <text class="detail" x="530" y="145" text-anchor="middle">Edge cases · new metrics</text>
+
+  <path class="arrow" d="M190 167v42h120m-8-8 8 8-8 8"/>
+  <path class="arrow" d="M530 167v42H410m8-8-8 8 8 8"/>
+
+  <rect class="store" x="210" y="230" width="300" height="88" rx="12"/>
+  <text class="heading" x="360" y="265" text-anchor="middle">Improvement assets</text>
+  <text class="detail" x="360" y="294" text-anchor="middle">Tests · metrics · contextual patches</text>
+
+  <path class="arrow dashed" d="M360 318v46m-8-8 8 8 8-8"/>
+
+  <text class="eyebrow" x="360" y="395" text-anchor="middle">CONTEXTUAL ALIGNMENT</text>
+
+  <rect class="store" x="25" y="420" width="205" height="92" rx="12"/>
+  <text class="heading" x="127.5" y="455" text-anchor="middle">Main assessment</text>
+  <text class="small" x="127.5" y="483" text-anchor="middle">Stable core prompt</text>
+
+  <path class="arrow" d="M230 466h30m-8-8 8 8-8 8"/>
+
+  <rect class="active" x="260" y="420" width="235" height="92" rx="12"/>
+  <text class="heading active-text" x="377.5" y="455" text-anchor="middle">Alignment check</text>
+  <text class="small active-text" x="377.5" y="483" text-anchor="middle">Retrieve applicable guidance</text>
+
+  <path class="arrow" d="M495 466h30m-8-8 8 8-8 8"/>
+
+  <rect class="store" x="525" y="420" width="170" height="92" rx="12"/>
+  <text class="heading" x="610" y="455" text-anchor="middle">Final output</text>
+  <text class="small" x="610" y="483" text-anchor="middle">Checked result</text>
+
+  <rect class="store" x="210" y="545" width="335" height="90" rx="12"/>
+  <text class="subheading" x="377.5" y="572" text-anchor="middle">Contextual guidance</text>
+  <text class="subheading" x="377.5" y="595" text-anchor="middle">knowledge base</text>
+  <text class="small" x="377.5" y="620" text-anchor="middle">Versioned and regression-tested patches</text>
+
+  <path class="arrow dashed" d="M377.5 545v-33m-8 8 8-8 8 8"/>
+  <text class="small" x="395" y="535">RAG retrieval</text>
+</svg>
