@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">From free-form summaries to critical fields</title>
+  <desc id="desc">A side-by-side comparison showing that free-form summaries are ambiguous and difficult to score, while critical fields are explicit, evidence-backed, and testable.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #16324f; }
+    .eyebrow { font-size: 15px; font-weight: 700; letter-spacing: 1.4px; fill: #167d7f; }
+    .heading { font-size: 28px; font-weight: 750; }
+    .body { font-size: 18px; fill: #425466; }
+    .small { font-size: 16px; fill: #425466; }
+    .bad-card { fill: #fff4e5; stroke: #d9822b; stroke-width: 2; }
+    .good-card { fill: #e8f1f5; stroke: #167d7f; stroke-width: 2; }
+    .paper { fill: #ffffff; stroke: #c8d3df; stroke-width: 2; }
+    .line { stroke: #9aaaba; stroke-width: 5; stroke-linecap: round; }
+    .accent-line { stroke: #167d7f; stroke-width: 5; stroke-linecap: round; }
+    .arrow { fill: none; stroke: #7d91a6; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .tick { fill: none; stroke: #167d7f; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #e7edf3; }
+      .body, .small { fill: #bdc9d4; }
+      .bad-card { fill: #3a2a1b; }
+      .good-card { fill: #17343b; }
+      .paper { fill: #172432; stroke: #53687c; }
+      .line { stroke: #75899c; }
+    }
+  </style>
+
+  <text class="eyebrow" x="480" y="36" text-anchor="middle">THE CORE REFRAMING</text>
+
+  <rect class="bad-card" x="42" y="62" width="378" height="410" rx="20"/>
+  <text class="heading" x="74" y="108">Free-form summary</text>
+  <text class="body" x="74" y="141">“Summarize this application.”</text>
+
+  <rect class="paper" x="94" y="176" width="274" height="154" rx="10"/>
+  <path class="line" d="M120 209h192M120 238h216M120 267h168M120 296h202"/>
+
+  <circle cx="92" cy="375" r="18" fill="#d9822b"/>
+  <text x="92" y="382" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">?</text>
+  <text class="small" x="124" y="370">What must be included?</text>
+  <text class="small" x="124" y="397">How should it be scored?</text>
+  <text class="small" x="124" y="424">Which omission is material?</text>
+
+  <path class="arrow" d="M438 267h78m-14-14 14 14-14 14"/>
+
+  <rect class="good-card" x="540" y="62" width="378" height="410" rx="20"/>
+  <text class="heading" x="572" y="108">Critical fields</text>
+  <text class="body" x="572" y="141">“Extract what drives the decision.”</text>
+
+  <rect class="paper" x="572" y="176" width="314" height="54" rx="9"/>
+  <text class="small" x="590" y="208">Smoking status</text>
+  <text x="854" y="209" text-anchor="end" font-size="16" font-weight="700" fill="#167d7f">FORMER</text>
+
+  <rect class="paper" x="572" y="244" width="314" height="54" rx="9"/>
+  <text class="small" x="590" y="276">BMI</text>
+  <text x="854" y="277" text-anchor="end" font-size="16" font-weight="700" fill="#d9822b">CONFLICT</text>
+
+  <rect class="paper" x="572" y="312" width="314" height="54" rx="9"/>
+  <text class="small" x="590" y="344">Medical history</text>
+  <text x="854" y="345" text-anchor="end" font-size="16" font-weight="700" fill="#167d7f">FOUND</text>
+
+  <path class="tick" d="M579 407l10 11 22-27"/>
+  <text class="small" x="625" y="414">Explicit · evidence-backed · testable</text>
+</svg>

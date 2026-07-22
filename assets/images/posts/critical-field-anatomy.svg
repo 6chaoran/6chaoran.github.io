@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Anatomy of a critical field</title>
+  <desc id="desc">A smoking-status field combines a normalized value, the raw source wording, a status, and a citation to the supporting evidence.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #16324f; }
+    .eyebrow { font-size: 15px; font-weight: 700; letter-spacing: 1.4px; fill: #167d7f; }
+    .heading { font-size: 26px; font-weight: 750; }
+    .label { font-size: 14px; font-weight: 700; letter-spacing: .8px; fill: #557086; }
+    .value { font-size: 21px; font-weight: 700; }
+    .body { font-size: 17px; fill: #425466; }
+    .card { fill: #f6f8fb; stroke: #c8d3df; stroke-width: 2; }
+    .field { fill: #ffffff; stroke: #c8d3df; stroke-width: 1.5; }
+    .evidence { fill: #e8f1f5; stroke: #91aabd; stroke-width: 1.5; }
+    .status { fill: #dff3ed; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #e7edf3; }
+      .label, .body { fill: #bdc9d4; }
+      .card { fill: #172432; stroke: #53687c; }
+      .field { fill: #1c2d3c; stroke: #53687c; }
+      .evidence { fill: #17343b; stroke: #53687c; }
+      .status { fill: #17483e; }
+    }
+  </style>
+
+  <text class="eyebrow" x="480" y="36" text-anchor="middle">ANATOMY OF A CRITICAL FIELD</text>
+  <rect class="card" x="70" y="64" width="820" height="438" rx="22"/>
+
+  <text class="heading" x="108" y="112">smoker_status</text>
+  <rect class="status" x="700" y="82" width="146" height="42" rx="21"/>
+  <circle cx="724" cy="103" r="7" fill="#167d7f"/>
+  <text x="746" y="110" font-size="16" font-weight="700" fill="#0f6668">FOUND</text>
+
+  <rect class="field" x="108" y="148" width="332" height="116" rx="12"/>
+  <text class="label" x="132" y="181">NORMALIZED VALUE</text>
+  <text class="value" x="132" y="222">former</text>
+  <text class="body" x="132" y="248">Comparable downstream</text>
+
+  <rect class="field" x="464" y="148" width="382" height="116" rx="12"/>
+  <text class="label" x="488" y="181">RAW VALUE</text>
+  <text class="body" x="488" y="216">“Stopped smoking five years ago</text>
+  <text class="body" x="488" y="241">and has not smoked since.”</text>
+
+  <rect class="evidence" x="108" y="288" width="738" height="166" rx="12"/>
+  <text class="label" x="132" y="323">SUPPORTING EVIDENCE</text>
+  <text class="value" x="132" y="361">Sample life application · page 1</text>
+  <text class="body" x="132" y="397">“Stopped smoking five years ago and has not smoked since.”</text>
+  <path d="M132 421h665" stroke="#91aabd" stroke-width="1.5"/>
+  <text class="body" x="132" y="445">Traceable to the original document for human verification</text>
+
+  <text class="body" x="480" y="535" text-anchor="middle">Value for systems · wording for context · status for safety · evidence for trust</text>
+</svg>

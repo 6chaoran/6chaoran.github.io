@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Underwriting review example</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { color-scheme: light dark; background: transparent; }
+    body {
+      margin: 0;
+      padding: 12px;
+      background: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .fas { font-family: inherit; font-style: normal; font-weight: 800; }
+    .fa-file-medical-alt::before { content: "UW"; font-size: 0.55rem; letter-spacing: -0.03em; }
+    .fa-exclamation-triangle::before { content: "!"; }
+    .fa-link::before { content: "↗"; }
+    .fa-user::before { content: "A"; }
+    .fa-check-circle::before { content: "✓"; }
+    .fa-notes-medical::before { content: "+"; }
+    .fa-briefcase::before { content: "▣"; }
+    .fa-history::before { content: "↺"; }
+    .fa-shield-alt::before { content: "✓"; }
+    .fa-info-circle::before { content: "i"; }
+
+.uw-case {
+  --uw-navy: #14263d;
+  --uw-ink: #24364b;
+  --uw-muted: #68788c;
+  --uw-line: #e2e8f0;
+  --uw-surface: #ffffff;
+  --uw-canvas: #f5f7fa;
+  --uw-blue: #2563eb;
+  --uw-blue-soft: #eff6ff;
+  --uw-teal: #0f8a7b;
+  --uw-teal-soft: #eaf8f5;
+  --uw-amber: #b45309;
+  --uw-amber-soft: #fff7ed;
+  margin: 1.75rem 0 2.5rem;
+  overflow: hidden;
+  color: var(--uw-ink);
+  background: var(--uw-canvas);
+  border: 1px solid #dbe3ec;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(30, 47, 70, 0.12);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.uw-case h4,
+.uw-case h5,
+.uw-case h6,
+.uw-case p,
+.uw-case dl,
+.uw-case dd { margin: 0; }
+
+.uw-case__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.78rem 1.4rem;
+  color: #fff;
+  background: var(--uw-navy);
+}
+
+.uw-case__brand,
+.uw-case__brand-icon,
+.uw-case__side-title,
+.uw-case__verified,
+.uw-case__decision {
+  display: flex;
+  align-items: center;
+}
+
+.uw-case__brand { gap: 0.65rem; }
+.uw-case__brand-icon {
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  color: #bfe9e2;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+}
+.uw-case__brand div { display: grid; }
+.uw-case__brand strong { font-size: 0.74rem; letter-spacing: 0.01em; }
+.uw-case__brand span,
+.uw-case__meta { color: #aebdd0; font-size: 0.62rem; }
+.uw-case__meta { display: flex; gap: 1rem; }
+
+.uw-case__hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.55rem 1.4rem 1.2rem;
+  background: var(--uw-surface);
+}
+
+.uw-case__eyebrow {
+  margin-bottom: 0.18rem !important;
+  color: var(--uw-blue);
+  font-size: 0.63rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.uw-case__hero h4 {
+  color: var(--uw-navy);
+  font-size: 1.38rem;
+  letter-spacing: -0.025em;
+}
+
+.uw-case__hero p:last-child {
+  margin-top: 0.25rem;
+  color: var(--uw-muted);
+  font-size: 0.72rem;
+}
+
+.uw-case__decision {
+  gap: 0.42rem;
+  padding: 0.4rem 0.68rem;
+  color: #92400e;
+  background: var(--uw-amber-soft);
+  border: 1px solid #fed7aa;
+  border-radius: 7px;
+  font-size: 0.68rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.uw-case__metrics {
+  display: grid;
+  grid-template-columns: 1.45fr repeat(3, 1fr);
+  gap: 1px;
+  margin: 0 1.4rem 1.15rem;
+  overflow: hidden;
+  background: var(--uw-line);
+  border: 1px solid var(--uw-line);
+  border-radius: 10px;
+}
+
+.uw-case__metric {
+  min-width: 0;
+  padding: 0.82rem 0.9rem;
+  background: var(--uw-surface);
+}
+.uw-case__metric > span {
+  display: block;
+  margin-bottom: 0.22rem;
+  color: var(--uw-muted);
+  font-size: 0.62rem;
+  font-weight: 650;
+}
+.uw-case__metric strong {
+  color: var(--uw-navy);
+  font-size: 1.08rem;
+}
+.uw-case__metric strong small {
+  color: var(--uw-muted);
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+.uw-case__metric--attention strong { color: var(--uw-amber); }
+.uw-case__progress {
+  height: 4px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  background: #e7edf4;
+  border-radius: 999px;
+}
+.uw-case__progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--uw-blue), var(--uw-teal));
+  border-radius: inherit;
+}
+
+.uw-case__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(13rem, 0.85fr);
+  gap: 1rem;
+  padding: 0 1.4rem 1.4rem;
+}
+
+.uw-case__main,
+.uw-case__sidebar { display: grid; align-content: start; gap: 0.85rem; }
+
+.uw-case__section,
+.uw-case__exception,
+.uw-case__side-card {
+  background: var(--uw-surface);
+  border: 1px solid var(--uw-line);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(30, 47, 70, 0.03);
+}
+
+.uw-case__section,
+.uw-case__exception { padding: 1rem; }
+
+.uw-case__exception {
+  background: linear-gradient(135deg, #fffaf5 0%, #fff 62%);
+  border-color: #f1cda8;
+  box-shadow: inset 3px 0 0 #d97706;
+}
+
+.uw-case__section-heading {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.uw-case__section-icon {
+  display: grid;
+  width: 1.85rem;
+  height: 1.85rem;
+  place-items: center;
+  color: var(--uw-blue);
+  background: var(--uw-blue-soft);
+  border-radius: 7px;
+}
+.uw-case__exception .uw-case__section-icon { color: var(--uw-amber); background: #ffedd5; }
+.uw-case__section-heading p {
+  color: var(--uw-muted);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.uw-case__section-heading h5 {
+  color: var(--uw-navy);
+  font-size: 0.82rem;
+}
+.uw-case__tag,
+.uw-case__verified {
+  width: fit-content;
+  padding: 0.18rem 0.42rem;
+  border-radius: 999px;
+  font-size: 0.56rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.uw-case__verified { gap: 0.25rem; color: #08766a; background: var(--uw-teal-soft); }
+.uw-case__tag { color: #08766a; background: var(--uw-teal-soft); vertical-align: middle; }
+.uw-case__tag--amber { color: #9a4a0b; background: #ffedd5; }
+.uw-case__tag--muted { color: #5f6f82; background: #edf1f5; }
+
+.uw-case__exception-copy {
+  margin: 0.72rem 0 0.8rem !important;
+  color: #725139;
+  font-size: 0.68rem;
+}
+
+.uw-case__comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.65rem;
+}
+.uw-case__comparison article {
+  padding: 0.68rem 0.78rem;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid #f1d7bd;
+  border-radius: 8px;
+}
+.uw-case__comparison article > span {
+  display: block;
+  color: var(--uw-muted);
+  font-size: 0.58rem;
+  font-weight: 650;
+}
+.uw-case__comparison strong {
+  display: block;
+  margin: 0.08rem 0;
+  color: var(--uw-navy);
+  font-size: 1.25rem;
+}
+.uw-case__comparison small { color: #796b61; font-size: 0.56rem; }
+.uw-case__comparison small i { margin-right: 0.18rem; color: var(--uw-amber); }
+.uw-case__versus { color: #9a6d4e; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; }
+
+.uw-case__data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 0.85rem;
+  border: 1px solid var(--uw-line);
+  border-radius: 8px;
+}
+.uw-case__data-grid > div { min-width: 0; padding: 0.65rem 0.7rem; }
+.uw-case__data-grid > div + div { border-left: 1px solid var(--uw-line); }
+.uw-case__data-grid dt {
+  color: var(--uw-muted);
+  font-size: 0.57rem;
+  font-weight: 650;
+}
+.uw-case__data-grid dd {
+  margin-top: 0.08rem;
+  color: var(--uw-navy);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+.uw-case__data-grid small { color: var(--uw-muted); font-size: 0.53rem; }
+
+.uw-case__timeline {
+  position: relative;
+  display: grid;
+  gap: 0.68rem;
+  margin-top: 0.85rem;
+  padding-left: 0.18rem;
+}
+.uw-case__timeline::before {
+  position: absolute;
+  top: 0.48rem;
+  bottom: 0.48rem;
+  left: 0.46rem;
+  width: 1px;
+  background: var(--uw-line);
+  content: "";
+}
+.uw-case__timeline article {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.62rem;
+}
+.uw-case__timeline-dot {
+  z-index: 1;
+  width: 0.58rem;
+  height: 0.58rem;
+  margin-top: 0.22rem;
+  background: #94a3b8;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #94a3b8;
+}
+.uw-case__timeline-dot--active { background: var(--uw-teal); box-shadow: 0 0 0 1px var(--uw-teal); }
+.uw-case__timeline-dot--family { background: var(--uw-blue); box-shadow: 0 0 0 1px var(--uw-blue); }
+.uw-case__timeline h6 { color: var(--uw-navy); font-size: 0.68rem; }
+.uw-case__timeline p { margin-top: 0.08rem; color: var(--uw-muted); font-size: 0.6rem; }
+
+.uw-case__side-card { padding: 0.9rem; }
+.uw-case__side-title { gap: 0.45rem; padding-bottom: 0.65rem; border-bottom: 1px solid var(--uw-line); }
+.uw-case__side-title i { color: var(--uw-blue); }
+.uw-case__side-title h5 { color: var(--uw-navy); font-size: 0.72rem; }
+.uw-case__side-card dl > div { padding: 0.55rem 0; border-bottom: 1px solid var(--uw-line); }
+.uw-case__side-card dl > div:last-child { padding-bottom: 0; border-bottom: 0; }
+.uw-case__side-card dt { color: var(--uw-muted); font-size: 0.56rem; }
+.uw-case__side-card dd { margin-top: 0.08rem; color: var(--uw-navy); font-size: 0.66rem; }
+.uw-case__side-label {
+  margin-top: 0.7rem !important;
+  color: var(--uw-muted);
+  font-size: 0.57rem;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+.uw-case__prior-decision {
+  margin: 0.1rem 0 0.3rem !important;
+  color: var(--uw-blue);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.uw-case__side-copy { color: var(--uw-muted); font-size: 0.62rem; }
+.uw-case__side-card--source { background: #f8fbff; }
+.uw-case__side-card ul { display: grid; gap: 0.52rem; margin: 0.7rem 0 0; padding: 0; list-style: none; }
+.uw-case__side-card li { display: grid; grid-template-columns: auto 1fr; gap: 0.42rem; color: var(--uw-muted); font-size: 0.6rem; }
+.uw-case__side-card li i { margin-top: 0.13rem; color: var(--uw-teal); }
+.uw-case__side-card li:last-child i { color: var(--uw-blue); }
+
+.uw-case__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.72rem 1.4rem;
+  color: #738297;
+  background: #edf2f7;
+  border-top: 1px solid #dce4ed;
+  font-size: 0.57rem;
+}
+.uw-case__footer i { margin-right: 0.25rem; color: var(--uw-teal); }
+
+@media (max-width: 760px) {
+  .uw-case__meta { display: none; }
+  .uw-case__hero { flex-direction: column; }
+  .uw-case__metrics { grid-template-columns: 1fr 1fr; }
+  .uw-case__layout { grid-template-columns: 1fr; }
+  .uw-case__data-grid { grid-template-columns: 1fr 1fr; }
+  .uw-case__data-grid > div:nth-child(3) { border-left: 0; border-top: 1px solid var(--uw-line); }
+  .uw-case__data-grid > div:nth-child(4) { border-top: 1px solid var(--uw-line); }
+}
+
+@media (max-width: 480px) {
+  .worked-example__details summary { align-items: flex-start; flex-direction: column; }
+  .worked-example__details summary small { margin-left: 0; }
+  .uw-case__topbar,
+  .uw-case__hero,
+  .uw-case__layout,
+  .uw-case__footer { padding-right: 0.9rem; padding-left: 0.9rem; }
+  .uw-case__metrics { margin-right: 0.9rem; margin-left: 0.9rem; grid-template-columns: 1fr; }
+  .uw-case__comparison { grid-template-columns: 1fr; }
+  .uw-case__versus { text-align: center; }
+  .uw-case__section-heading { grid-template-columns: auto 1fr; }
+  .uw-case__section-heading > :last-child { grid-column: 2; }
+  .uw-case__data-grid { grid-template-columns: 1fr; }
+  .uw-case__data-grid > div + div { border-top: 1px solid var(--uw-line); border-left: 0; }
+  .uw-case__footer { flex-direction: column; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .worked-example__details { background: #172238; border-color: #34445c; }
+  .worked-example__details summary { color: #e6edf7; background: #1d2a40; }
+  .uw-case {
+    --uw-navy: #e6edf7;
+    --uw-ink: #d6dfeb;
+    --uw-muted: #9baabd;
+    --uw-line: #344257;
+    --uw-surface: #1c283b;
+    --uw-canvas: #141e2e;
+    --uw-blue-soft: #1d365c;
+    --uw-teal-soft: #173e3b;
+    --uw-amber-soft: #432d1d;
+    border-color: #344257;
+    box-shadow: none;
+  }
+  .uw-case__topbar { color: #fff; background: #101827; }
+  .uw-case__brand-icon { color: #bfe9e2; }
+  .uw-case__decision { color: #f7c995; border-color: #704c2a; }
+  .uw-case__metric--attention strong { color: #f0ad68; }
+  .uw-case__progress { background: #344257; }
+  .uw-case__exception {
+    background: linear-gradient(135deg, #39281d 0%, #1c283b 65%);
+    border-color: #704c2a;
+  }
+  .uw-case__exception-copy,
+  .uw-case__comparison small { color: #c9a788; }
+  .uw-case__comparison article { background: rgba(20, 30, 46, 0.78); border-color: #62452d; }
+  .uw-case__timeline-dot { border-color: #1c283b; }
+  .uw-case__side-card--source { background: #18283e; }
+  .uw-case__footer { color: #9baabd; background: #121c2b; border-color: #344257; }
+}
+
+@media print {
+  .uw-case { box-shadow: none; break-inside: avoid; }
+  .worked-example__details:not([open]) > :not(summary) { display: block; }
+}
+
+    .uw-case {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 4px; }
+    }
+  </style>
+</head>
+<body>
+<section class="uw-case" aria-labelledby="uw-case-title">
+  <header class="uw-case__topbar">
+    <div class="uw-case__brand">
+      <span class="uw-case__brand-icon" aria-hidden="true"><i class="fas fa-file-medical-alt"></i></span>
+      <div>
+        <strong>Underwriting workspace</strong>
+        <span>AI-assisted document review</span>
+      </div>
+    </div>
+    <div class="uw-case__meta">
+      <span>Case UW-2026-0148</span>
+      <span>Updated just now</span>
+    </div>
+  </header>
+
+  <div class="uw-case__hero">
+    <div>
+      <p class="uw-case__eyebrow">Life application · Singapore</p>
+      <h4 id="uw-case-title">Case review summary</h4>
+      <p>Structured facts from a two-page application, ready for underwriter verification.</p>
+    </div>
+    <span class="uw-case__decision"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Manual review required</span>
+  </div>
+
+  <div class="uw-case__metrics" aria-label="Case overview">
+    <div class="uw-case__metric uw-case__metric--primary">
+      <span>Extraction coverage</span>
+      <strong>90%</strong>
+      <div class="uw-case__progress" aria-label="90 percent of fields found"><span style="width: 90%"></span></div>
+    </div>
+    <div class="uw-case__metric">
+      <span>Required fields</span>
+      <strong>9 <small>of 10 found</small></strong>
+    </div>
+    <div class="uw-case__metric">
+      <span>Evidence</span>
+      <strong>11 <small>references</small></strong>
+    </div>
+    <div class="uw-case__metric uw-case__metric--attention">
+      <span>Exceptions</span>
+      <strong>1 <small>to resolve</small></strong>
+    </div>
+  </div>
+
+  <div class="uw-case__layout">
+    <div class="uw-case__main">
+      <section class="uw-case__exception" aria-labelledby="uw-exception-title">
+        <div class="uw-case__section-heading">
+          <span class="uw-case__section-icon" aria-hidden="true"><i class="fas fa-exclamation-triangle"></i></span>
+          <div>
+            <p>Priority exception</p>
+            <h5 id="uw-exception-title">Conflicting BMI values</h5>
+          </div>
+          <span class="uw-case__tag uw-case__tag--amber">Needs verification</span>
+        </div>
+        <p class="uw-case__exception-copy">Two supported values were found. The system has preserved both and withheld a normalized value.</p>
+        <div class="uw-case__comparison">
+          <article>
+            <span>Applicant declaration</span>
+            <strong>26.8</strong>
+            <small><i class="fas fa-link" aria-hidden="true"></i> Application · page 1</small>
+          </article>
+          <div class="uw-case__versus" aria-hidden="true">vs</div>
+          <article>
+            <span>Medical examination</span>
+            <strong>27.4</strong>
+            <small><i class="fas fa-link" aria-hidden="true"></i> Application · page 2</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="uw-case__section" aria-labelledby="uw-profile-title">
+        <div class="uw-case__section-heading">
+          <span class="uw-case__section-icon" aria-hidden="true"><i class="fas fa-user"></i></span>
+          <div><p>Extracted information</p><h5 id="uw-profile-title">Applicant profile</h5></div>
+          <span class="uw-case__verified"><i class="fas fa-check-circle" aria-hidden="true"></i> Complete</span>
+        </div>
+        <dl class="uw-case__data-grid">
+          <div><dt>Age</dt><dd>42</dd><small>Exact match</small></div>
+          <div><dt>Gender</dt><dd>Male</dd><small>Normalized</small></div>
+          <div><dt>Smoking status</dt><dd>Former</dd><small>Stopped 5 years ago</small></div>
+          <div><dt>Alcohol use</dt><dd>Regular</dd><small>4 units / week</small></div>
+        </dl>
+      </section>
+
+      <section class="uw-case__section" aria-labelledby="uw-medical-title">
+        <div class="uw-case__section-heading">
+          <span class="uw-case__section-icon" aria-hidden="true"><i class="fas fa-notes-medical"></i></span>
+          <div><p>Health disclosures</p><h5 id="uw-medical-title">Medical history</h5></div>
+          <span class="uw-case__verified"><i class="fas fa-check-circle" aria-hidden="true"></i> Evidence linked</span>
+        </div>
+        <div class="uw-case__timeline">
+          <article>
+            <span class="uw-case__timeline-dot uw-case__timeline-dot--active"></span>
+            <div><h6>Hypertension <span class="uw-case__tag">Active</span></h6><p>Diagnosed in 2022 · controlled with amlodipine</p></div>
+          </article>
+          <article>
+            <span class="uw-case__timeline-dot"></span>
+            <div><h6>Appendicitis <span class="uw-case__tag uw-case__tag--muted">Resolved</span></h6><p>Surgically treated in 2010 · fully resolved</p></div>
+          </article>
+          <article>
+            <span class="uw-case__timeline-dot uw-case__timeline-dot--family"></span>
+            <div><h6>Type 2 diabetes <span class="uw-case__tag uw-case__tag--muted">Family history</span></h6><p>Father · living with condition</p></div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <aside class="uw-case__sidebar" aria-label="Supporting case information">
+      <section class="uw-case__side-card">
+        <div class="uw-case__side-title"><i class="fas fa-briefcase" aria-hidden="true"></i><h5>Financial profile</h5></div>
+        <dl>
+          <div><dt>Occupation</dt><dd>Senior civil engineer</dd></div>
+          <div><dt>Work pattern</dt><dd>Office-based with site inspections</dd></div>
+          <div><dt>Gross income</dt><dd><strong>SGD 12,000</strong> / month</dd></div>
+        </dl>
+      </section>
+
+      <section class="uw-case__side-card">
+        <div class="uw-case__side-title"><i class="fas fa-history" aria-hidden="true"></i><h5>Prior underwriting</h5></div>
+        <p class="uw-case__side-label">2023 decision</p>
+        <p class="uw-case__prior-decision">Rated</p>
+        <p class="uw-case__side-copy">Accepted with a <strong>25% premium loading</strong> due to hypertension.</p>
+      </section>
+
+      <section class="uw-case__side-card uw-case__side-card--source">
+        <div class="uw-case__side-title"><i class="fas fa-shield-alt" aria-hidden="true"></i><h5>Traceability</h5></div>
+        <ul>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Every extracted field links to source evidence</span></li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Original wording retained alongside normalized values</span></li>
+          <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Business rules and automated decisions not applied</span></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="uw-case__footer">
+    <span><i class="fas fa-shield-alt" aria-hidden="true"></i> Evidence-grounded extraction</span>
+    <span>For underwriter review · not an automated decision</span>
+  </footer>
+</section>
+  <script>
+    (function () {
+      function reportHeight() {
+        window.parent.postMessage(
+          {
+            source: "underwriting-review-example",
+            height: document.documentElement.scrollHeight
+          },
+          "*"
+        );
+      }
+
+      window.addEventListener("load", reportHeight);
+      window.addEventListener("resize", reportHeight);
+
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(reportHeight).observe(document.body);
+      }
+    }());
+  </script>
+</body>
+</html>
