@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Shiny + shinydashboard + googleVis = Powerful Interactive Visiualization"
 date: 2018-07-26 23:02:01 +0800
 categories: 

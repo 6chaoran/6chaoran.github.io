@@ -1,4 +1,7 @@
 ---
+pillar: ai-engineering
+format: guide
+series: document-intelligence-in-practice
 title: "Private LLM Integration with RAGFlow: A Step-by-Step Guide"
 date: 2024-11-08
 toc: true

@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: project
 title:  "Recognize the Digits"
 date:   2015-07-30 16:16:01 +0800
 categories: 

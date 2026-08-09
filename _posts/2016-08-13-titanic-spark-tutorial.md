@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Revisit Titanic Data using Apache Spark"
 date: 2016-08-13 16:16:01 +0800
 categories: 

@@ -18,7 +18,7 @@ classes: wide
       {% if category[1].size == i %}
         <li>
           <a href="#{{ category[0] | slugify }}">
-            <strong style="background-color: #2f7d95; opacity: 80%;
+            <strong style="background-color: var(--brand-primary); opacity: 80%;
             color: white; border-radius: 2rem; padding: 0 0.5rem;">{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
           </a>
         </li>

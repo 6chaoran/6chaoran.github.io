@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title:  "Spatial Visualization with ggmap R package"
 date:   2015-07-23 16:16:01 +0800
 categories: 
@@ -72,7 +74,7 @@ plot_crime=ggmap(map)+geom_jitter(aes(X,Y,colour=Category),
 plot_crime
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
+_The original chart image for this example is no longer available._
     
 ## Some Insights:
 There are much more Larceny/Theft (in green) cases in 2014 than the rest two crimes and most of the cases happened in North Coast. Is it because the place is closer to Alcatraz Island? I guess not. The assault crimes (in red) are mostly clustered near Tenderloin, which is indeed a [high-crime neighbourhood](https://en.wikipedia.org/wiki/Tenderloin,_San_Francisco) in San Francisco, quoted from wikipedia. The Vehicle theft crime (in blue) is much less frequent compared with the top 2 and there is no particular worse area.
@@ -175,7 +177,7 @@ plot_taxi
 ## Warning: Removed 53 rows containing missing values (geom_point).
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
+_The original chart image for this example is no longer available._
    
 ## Some Insights:
 I’ve never been to Portugal, but I can guess Vitoria is the CBD area or places of attractions in Porto, as the taxi trajectories are very dense at the southern Porto, around the Vitoria.   

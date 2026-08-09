@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Not so basic Keras tutorial for R"
 date: 2018-08-05 16:14:00 +0800
 categories: 

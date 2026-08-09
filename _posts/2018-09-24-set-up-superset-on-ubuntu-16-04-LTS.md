@@ -1,10 +1,13 @@
 ---
+pillar: archive
+format: guide
 title: "Set up Superset on ubuntu 16.04 LTS"
 date: 2018-09-24 21:37:00 +0800
 categories: 
   - visualization
 toc: true
 toc_sticky: true
+excerpt: "A legacy walkthrough of installing Apache Superset on Ubuntu 16.04 and running it as a systemd service."
 ---
 
 ![logo](https://superset.incubator.apache.org/_images/s.png)
@@ -104,4 +107,3 @@ If everything is running ok, this is the expected output.
 ![systemd-status](https://raw.githubusercontent.com/6chaoran/data-story/master/data-tools/superset/systemd-service.png)
 
 Now superset should be available at http://localhost:8088.
-

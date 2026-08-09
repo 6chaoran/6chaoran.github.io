@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title:  "Tree based models in R on Titanic Data"
 date:   2015-07-19 21:39:59 +0800
 categories: 

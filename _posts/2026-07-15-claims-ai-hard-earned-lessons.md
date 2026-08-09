@@ -1,4 +1,8 @@
 ---
+pillar: ai-in-practice
+format: case-study
+series: from-demo-to-dependable
+featured: true
 title: "From Demo to Production: Four Hard-Earned Lessons from Shipping GenAI for Insurance Claims"
 date: 2026-07-15
 toc: true

@@ -1,0 +1,45 @@
+pillars:
+  ai-engineering:
+    name: "AI Engineering"
+    description: "System design, orchestration, deployment, performance, observability, and private model integration."
+  evaluation-reliability:
+    name: "Evaluation & Reliability"
+    description: "Evaluation design, metrics, regression testing, evidence, quality assurance, and feedback loops."
+  document-intelligence:
+    name: "Document Intelligence"
+    description: "OCR and vision-language models, extraction, layout, retrieval, citations, and critical fields."
+  ai-in-practice:
+    name: "AI in Practice"
+    description: "Applications, adoption, product lessons, pilot delivery, business workflows, and team practices."
+
+archive:
+  name: "Archive"
+  description: "Earlier work in data science, visualization, R, recommendation systems, deep learning, and data engineering. Archive is a historical collection, not a fifth editorial pillar."
+
+formats:
+  field-note: "A concise observation, experiment, or implementation note."
+  guide: "A reproducible technical walkthrough."
+  case-study: "A problem, its constraints, decisions, outcome, and lessons."
+  essay: "An argument, mental model, or practical framework."
+  project: "A maintained artifact with a demo, source, or implementation notes."
+
+cornerstones:
+  - "/posts/2026-07-15-claims-ai-hard-earned-lessons/"
+  - "/posts/2026-07-22-stop-evaluating-summary/"
+  - "/posts/2026-06-30-ocr-evals-in-genai-era/"
+
+series:
+  from-demo-to-dependable:
+    name: "From Demo to Dependable"
+    description: "Patterns for evaluation, feedback, maintainability, and production readiness in applied AI systems."
+    posts:
+      - "/posts/2026-07-15-claims-ai-hard-earned-lessons/"
+      - "/posts/2026-06-30-ocr-evals-in-genai-era/"
+      - "/posts/2024-11-26-long-running-task-app/"
+  document-intelligence-in-practice:
+    name: "Document Intelligence in Practice"
+    description: "Practical approaches to OCR, structured extraction, retrieval, evidence, and decision-grade document workflows."
+    posts:
+      - "/posts/2026-07-22-stop-evaluating-summary/"
+      - "/posts/2026-06-30-ocr-evals-in-genai-era/"
+      - "/posts/2024-11-08-ragflow-with-own-llm/"

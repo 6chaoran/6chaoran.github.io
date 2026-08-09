@@ -1,0 +1,50 @@
+---
+layout: archive
+---
+
+<div class="editorial-index">
+  <header class="editorial-index__intro">
+    <p class="fieldbook-kicker">Writing</p>
+    <h1>Notes from building applied AI</h1>
+    <p>Architecture, evaluation, prototypes, production systems, and the lessons that connect them.</p>
+  </header>
+
+  {% assign current_posts = site.posts | where_exp: "post", "post.pillar != 'archive'" %}
+  <section aria-labelledby="current-writing">
+    <div class="fieldbook-section__heading"><h2 id="current-writing">Current writing</h2><span>{{ current_posts | size }} notes</span></div>
+    <div class="editorial-list">
+      {% for post in current_posts %}
+        <article class="editorial-list__item">
+          <div class="editorial-list__date">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b" }}<strong>{{ post.date | date: "%Y" }}</strong></time>
+          </div>
+          <div class="editorial-list__body">
+            <p class="fieldbook-meta">{{ post.format | default: "article" | replace: '-', ' ' }}</p>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.excerpt | markdownify | strip_html | truncate: 190 }}</p>
+          </div>
+          <a class="editorial-list__arrow" aria-label="Read {{ post.title | escape }}" href="{{ post.url | relative_url }}"><span>Read</span></a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="legacy-archive" aria-labelledby="legacy-writing">
+    <div class="fieldbook-section__heading"><h2 id="legacy-writing">Earlier work</h2><span>Archive · 2015–2023</span></div>
+    {% assign archive_posts = site.posts | where: "pillar", "archive" %}
+    {% assign archive_years = archive_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for year in archive_years %}
+      <div class="legacy-archive__year">
+        <h3>{{ year.name }}</h3>
+        <div class="legacy-archive__list">
+          {% for post in year.items %}
+            <article>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <span>{{ post.format | default: "article" | replace: '-', ' ' }}</span>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+</div>

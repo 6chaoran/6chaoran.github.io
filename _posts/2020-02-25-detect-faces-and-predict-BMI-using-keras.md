@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: project
 title: "Detect faces and predict BMI, Age and Gender using Keras"
 date: 2020-02-25 19:47:00 +0800
 toc: true

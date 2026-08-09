@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Web Scraping of JavaScript website"
 date: 2019-08-25 19:21:00 +0800
 toc: true

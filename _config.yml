@@ -13,11 +13,11 @@ minimal_mistakes_skin_dark: "dark"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Chaoran's Data Story"
+title                    : "Chaoran's Applied AI Notes"
 title_separator          : "|"
-subtitle                 : "A data science self-learning journey"
+subtitle                 : "AI applications, architecture, system design, and working prototypes"
 name                     : &name "Chaoran Liu" # &name is a YAML anchor which can be *referenced later
-description              : &description "A data science enthusiast"
+description              : &description "Practical notes for turning AI ideas into working pilots—and pilots into production systems."
 url                      : https://www.ichaoran.com #https://6chaoran.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "6chaoran"
@@ -25,7 +25,7 @@ teaser                   : # path of fallback teaser image, e.g. "/assets/images
 logo                     : "/assets/favicon/android-chrome-192x192.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_dark                : "/assets/favicon/android-chrome-192x192.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs              : true # true, false (default)
+breadcrumbs              : false # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman_v2", "staticman", "utterances", "custom"
@@ -93,11 +93,11 @@ og_image                 : "/assets/favicon/android-chrome-512x512.png" # Open G
 # For specifying social profiles, used in _includes/seo.html
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : Person
+  name                   : "Chaoran Liu"
   links: # An array of links to social media profiles
-    #- "https://twitter.com/mmistakes"
-    #- "https://www.facebook.com/michaelrose"
+    - "https://www.linkedin.com/in/liuchaoran"
+    - "https://github.com/6chaoran"
 
 # Analytics
 analytics:
@@ -111,7 +111,7 @@ analytics:
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
   avatar           : "assets/images/avatar.jpg"
-  bio              : "A data science enthusiast"
+  bio              : "I build practical AI applications and share the architectures, prototypes, and lessons behind them."
   location         : "Singapore"
   links:
     - label: "LinkedIn"
@@ -120,9 +120,6 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/6chaoran"
-    - label: "WordPress"
-      icon: "fab fa-wordpress"
-      url: "https://6chaoran.wordpress.com/"
 
 # Site Footer
 footer:
@@ -162,6 +159,15 @@ exclude:
   - package.json
   - Rakefile
   - README
+  - PLAN.md
+  - SECURITY.md
+  - design-qa.md
+  - test.ipynb
+  - docs
+  - _templates
+  - tools
+  - output
+  - .github
   - tmp
 keep_files:
   - .git
@@ -213,6 +219,8 @@ defaults:
       comments: true
       share: true
       related: true
+      toc: true
+      toc_sticky: true
   # _pages
   - scope:
       path: "_pages"

@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Write Your Own R Packages"
 excerpt: "This post is to write my own util package to wrap all my udfs with a neat documentation."
 date: 2019-05-03 14:47:00 +0800

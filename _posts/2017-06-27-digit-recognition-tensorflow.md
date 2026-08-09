@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Digit Recognition with Tensor Flow"
 date: 2017-06-27 16:16:01 +0800
 categories: 

@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Implement DeepFM model in Keras"
 date: 2019-01-03 11:39:00 +0800
 categories: 

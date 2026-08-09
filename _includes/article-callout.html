@@ -1,0 +1,4 @@
+<aside class="article-callout article-callout--{{ include.type | default: 'note' }}" role="note"{% if include.title %} aria-label="{{ include.title | escape }}"{% endif %}>
+  {% if include.title %}<strong class="article-callout__title">{{ include.title }}</strong>{% endif %}
+  <div class="article-callout__content">{{ include.content | markdownify }}</div>
+</aside>

@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: case-study
 title: "Job Hunting Like A Data Analyst (Part III)"
 date: 2015-09-14 16:16:01 +0800
 categories: 

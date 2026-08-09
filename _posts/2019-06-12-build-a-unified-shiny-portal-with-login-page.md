@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Build A Unified Shiny Portal With Login Page"
 excerpt: "Developing an extendable file structure to build the unified shiny portal."
 date: 2019-06-12 15:55:00 +0800

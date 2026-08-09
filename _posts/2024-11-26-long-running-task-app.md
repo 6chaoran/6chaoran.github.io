@@ -1,4 +1,7 @@
 ---
+pillar: ai-engineering
+format: guide
+series: from-demo-to-dependable
 title: "Handling Long-Running Tasks in Modern Web Apps"
 date: 2024-11-26
 toc: true

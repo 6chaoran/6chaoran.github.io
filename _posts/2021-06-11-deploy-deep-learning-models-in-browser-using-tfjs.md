@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Deploy deep learning models in browser using Tensorflow.js"
 date: 2021-06-11 20:30:01 +0800
 toc: true
@@ -190,7 +192,7 @@ For the complete implementation (including prediction from webcam), please check
 
 # 6. Live Demo
 
-The developed live demo is available at [here](/visualization/bmi-prediction-using-tfjs/)
+The developed live demo is available [here](/posts/2021-06-11-bmi-prediction-using-tfjs/).
 
 # 7. Reference
 

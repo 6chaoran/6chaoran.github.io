@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Introduction of renv package"
 date: 2020-07-19 23:47:00 +0800
 toc: true

@@ -1,4 +1,6 @@
 ---
+pillar: ai-in-practice
+format: essay
 title: Predictive Underwriting In A Nutshell
 date: 2024-09-28
 toc: true

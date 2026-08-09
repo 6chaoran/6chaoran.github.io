@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Tableau Intersection Filter Tutorial"
 date: 2016-06-09 16:16:01 +0800
 categories: 

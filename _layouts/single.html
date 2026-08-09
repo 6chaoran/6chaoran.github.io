@@ -26,7 +26,7 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}
+          {% if page.title and page.show_title != false %}
             <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
             {% if page.locale %}
               <span style="font-size: small;"> | also available in <a href={{ page.locale.url }}>{{ page.locale.name }}</a></span> 

@@ -1,0 +1,42 @@
+{% assign configured_series = site.data.editorial.series[page.series] %}
+{% assign recommendation_urls = page.recommended %}
+{% unless recommendation_urls %}
+  {% assign recommendation_urls = site.data.editorial.cornerstones %}
+{% endunless %}
+
+<nav class="article-next" aria-label="Continue reading">
+  {% if configured_series %}
+    <section class="article-next__series">
+      <p class="fieldbook-kicker">Series · {{ configured_series.name }}</p>
+      <ol>
+        {% for path in configured_series.posts %}
+          {% assign series_post = site.posts | where: "url", path | first %}
+          {% if series_post %}
+            <li{% if path == page.url %} aria-current="page"{% endif %}>
+              {% if path == page.url %}<span>{{ series_post.title }}</span>{% else %}<a href="{{ path | relative_url }}">{{ series_post.title }}</a>{% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+
+  <section class="article-next__recommendations">
+    <p class="fieldbook-kicker">Continue exploring</p>
+    <div>
+      {% assign shown = 0 %}
+      {% for path in recommendation_urls %}
+        {% if path != page.url and shown < 2 %}
+          {% assign recommended_post = site.posts | where: "url", path | first %}
+          {% if recommended_post %}
+            <a href="{{ recommended_post.url | relative_url }}">
+              <span>{{ site.data.editorial.pillars[recommended_post.pillar].name }}</span>
+              <strong>{{ recommended_post.title }}</strong>
+            </a>
+            {% assign shown = shown | plus: 1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+</nav>

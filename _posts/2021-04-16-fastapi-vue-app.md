@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Build an API App backed by FastAPI and Vue.js"
 date: 2021-04-16 10:02:01 +0800
 toc: true

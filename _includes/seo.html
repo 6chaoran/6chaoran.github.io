@@ -143,6 +143,30 @@
   }
 </script>
 
+{% if page.date %}
+{%- assign article_image = page.header.og_image | default: page.header.teaser | default: site.og_image -%}
+{%- unless article_image contains '://' -%}
+  {%- assign article_image = article_image | absolute_url -%}
+{%- endunless -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ canonical_url | jsonify }} },
+  "headline": {{ page.title | markdownify | strip_html | strip_newlines | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+  "author": { "@type": "Person", "name": {{ site.author.name | default: site.name | jsonify }}, "url": {{ '/about/' | absolute_url | jsonify }} },
+  "publisher": { "@type": "Person", "name": {{ site.author.name | default: site.name | jsonify }}, "url": {{ '/' | absolute_url | jsonify }} },
+  "image": {{ article_image | jsonify }},
+  "articleSection": {{ site.data.editorial.pillars[page.pillar].name | default: page.pillar | jsonify }},
+  "keywords": {{ page.tags | default: page.categories | join: ', ' | jsonify }},
+  "inLanguage": {{ site.locale | jsonify }}
+}
+</script>
+{% endif %}
+
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
 {% endif %}

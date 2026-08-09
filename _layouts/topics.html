@@ -1,0 +1,34 @@
+---
+layout: archive
+---
+
+<div class="editorial-index topics-index">
+  <header class="editorial-index__intro">
+    <p class="fieldbook-kicker">Topics</p>
+    <h1>Four ways into the work</h1>
+    <p>Browse by the problem being solved rather than by a growing list of technologies.</p>
+  </header>
+
+  <div class="topics-grid">
+    {% for pillar in site.data.editorial.pillars %}
+      {% assign pillar_posts = site.posts | where: "pillar", pillar[0] %}
+      <section id="{{ pillar[0] }}">
+        <p class="topics-grid__number">0{{ forloop.index }}</p>
+        <h2>{{ pillar[1].name }}</h2>
+        <p>{{ pillar[1].description }}</p>
+        <ul>
+          {% for post in pillar_posts limit: 4 %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  </div>
+
+  <section class="series-index" aria-labelledby="series-heading">
+    <div class="fieldbook-section__heading"><h2 id="series-heading">Flagship series</h2></div>
+    {% for series in site.data.editorial.series %}
+      <article><p class="fieldbook-kicker">Series</p><h3>{{ series[1].name }}</h3><p>{{ series[1].description }}</p><ol>{% for path in series[1].posts %}{% assign matched = site.posts | where: "url", path | first %}{% if matched %}<li><a href="{{ matched.url | relative_url }}">{{ matched.title }}</a></li>{% endif %}{% endfor %}</ol></article>
+    {% endfor %}
+  </section>
+
+  <a class="archive-callout" href="{{ '/year-archive/' | relative_url }}#legacy-writing"><span>Archive</span><strong>Earlier data-science work, 2015–2023</strong><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</div>

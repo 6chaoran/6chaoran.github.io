@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Build A Simple Machine Translator encoder-decoder framework with lstm"
 excerpt: "use encoder decoder arthitecture to translate a foreign language"
 date: 2019-01-03 11:39:00 +0800

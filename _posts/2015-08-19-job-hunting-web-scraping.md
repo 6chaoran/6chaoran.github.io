@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Job Hunting Like A Data Analyst (Part I)"
 date: 2015-08-19 16:16:01 +0800
 categories: 

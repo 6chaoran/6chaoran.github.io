@@ -9,6 +9,9 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+output/
+scripts/
+*api_key
 
 # Used by dotenv library to load environment variables.
 # .env
@@ -55,4 +58,11 @@ build-iPhoneSimulator/
 # Used by RuboCop. Remote config files pulled in from inherit_from directive.
 # .rubocop-https?--*
 
-_site
+# macOS metadata
+.DS_Store
+
+# Jekyll-generated site and caches
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+/.sass-cache/

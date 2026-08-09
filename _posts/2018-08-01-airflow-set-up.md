@@ -1,10 +1,13 @@
 ---
+pillar: archive
+format: guide
 title: "It's time to upgrade your scheduler to Airflow"
 date: 2018-08-01 15:11:01 +0800
 categories: 
   - data-engineering
 toc: true
 toc_sticky: true
+excerpt: "A legacy walkthrough of installing and configuring Apache Airflow 1.9 with local and distributed executor options."
 ---
 ![logo](https://cdn-images-1.medium.com/max/2000/1*fSL_bB5OrIrsxnP6GdYR5Q.jpeg)
 

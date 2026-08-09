@@ -1,6 +1,7 @@
 ---
-title: "Posts by Year"
+title: "Writing"
+show_title: false
 permalink: /year-archive/
-layout: posts
-author_profile: true
+layout: writing
+author_profile: false
 ---

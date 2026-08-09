@@ -1,4 +1,6 @@
 ---
+pillar: ai-engineering
+format: guide
 title: "DSPy, Meet Enterprise: Plugging in an Internal LLM Endpoint"
 date: 2026-06-23
 toc: true

@@ -1,8 +1,15 @@
 ---
+pillar: evaluation-reliability
+format: case-study
+series: from-demo-to-dependable
+featured: true
 title: "OCR Evaluation, Rebuilt for Insurance Claims in GenAI Era"
 date: 2026-06-30
 toc: true
 toc_sticky: true
+header:
+  og_image: "/assets/images/posts/ocr-evals-our-approach.jpg"
+  teaser: "/assets/images/posts/ocr-evals-our-approach.jpg"
 categories:
 - thoughts
 - LLM

@@ -1,4 +1,8 @@
 ---
+pillar: document-intelligence
+format: essay
+series: document-intelligence-in-practice
+featured: true
 title: "Beyond Summarization: Extracting Critical Fields that Matter for Insurance Decisions"
 date: 2026-07-22
 toc: true

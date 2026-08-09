@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: project
 title: "Released a DataFrame summarytool for Jupyter Notebook"
 date: 2021-03-11 23:02:01 +0800
 toc: true

@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Featured Projects"
+show_title: false
 permalink: /projects/
 author_profile: true
 classes: wide
@@ -14,11 +15,13 @@ projects:
     alt: "Promo video for the Singapore Primary School Registration Companion"
     title: "Singapore Primary School Registration Companion"
     summary: "A planning companion that helps parents compare school options and make more informed Primary One registration decisions."
+    role: "Product design, data pipeline, decision logic, and implementation"
+    status: "Working product"
+    outcome: "Turns scattered registration data into a focused comparison and planning workflow for parents."
     tags:
-      - Python
-      - Streamlit
-      - Pandas
-      - Plotly
+      - Nuxt
+      - Firebase
+      - TailwindCSS
 
   - id: vital-sign-prediction
     updated: "2024-08-24"
@@ -26,6 +29,9 @@ projects:
     alt: "Vital sign prediction demo showing estimated pulse and respiratory measurements"
     title: "A Live Demo of Predictive Vital Measurement"
     summary: "An in-browser demo that estimates age, BMI, heart rate, and respiratory rate while keeping camera data on the user's device."
+    role: "Model deployment and browser application"
+    status: "Research prototype"
+    outcome: "Demonstrates privacy-aware, on-device inference without uploading camera frames."
     project_url: "/posts/2021-06-11-bmi-prediction-using-tfjs/"
     case_url: "/posts/2021-06-11-deploy-deep-learning-models-in-browser-using-tfjs/"
     tags:
@@ -39,6 +45,9 @@ projects:
     alt: "DataFrame summary output in a Jupyter Notebook"
     title: "DataFrame Summary Tool in Jupyter Notebook"
     summary: "A Python implementation of summarytools for generating standardized, comprehensive DataFrame summaries inside Jupyter."
+    role: "Open-source package design and maintenance"
+    status: "Open source"
+    outcome: "Makes repeatable exploratory data summaries available inside Python notebooks."
     project_url: https://pypi.org/project/summarytools
     case_url: "/posts/2021-03-11-summarytools-for-jupyter-notebook/"
     source_url: https://github.com/6chaoran/jupyter-summarytools
@@ -54,6 +63,9 @@ projects:
     alt: "SGPR Profiler web application showing recent assessment records"
     title: "Singapore PR Profile Assessment App"
     summary: "A profile assessment app that estimates PR residency odds from voluntarily contributed records and shares high-level insights."
+    role: "Product design, data analysis, and implementation"
+    status: "Experiment"
+    outcome: "Explores how community-contributed records can support clearer self-assessment."
     project_url: https://spr.ichaoran.com
     case_url: "/posts/2023-06-16-sgprprofile-vue-demo/"
     tags:
@@ -68,6 +80,9 @@ projects:
     alt: "Medical Document Parser web application"
     title: "Medical Document Parser"
     summary: "A web app that turns photos and PDFs of medical reports into structured tables for easier review of personal health history."
+    role: "Document pipeline and application implementation"
+    status: "Prototype"
+    outcome: "Converts difficult-to-review medical documents into a structured personal history."
     project_url: https://med-doc-parser.ichaoran.com
     tags:
       - Python
@@ -81,7 +96,7 @@ projects:
     <div class="projects-intro__content">
       <p class="projects-eyebrow">Selected work · {{ page.projects | size }} projects</p>
       <p id="projects-intro-copy" class="projects-intro__copy">
-        Applied data science projects built to solve practical problems, share useful tools, and keep learning in public.
+        Applied AI and data products built around practical decisions, privacy-aware workflows, and useful tools. Recent work leads; earlier projects remain as a record of learning in public.
       </p>
     </div>
   </section>
@@ -105,9 +120,10 @@ projects:
         </div>
 
         <div class="project-row__content">
-          <p class="project-row__meta"><time datetime="{{ project.updated }}">Updated {{ project.updated | date: "%b %Y" }}</time></p>
+          <p class="project-row__meta"><time datetime="{{ project.updated }}">Updated {{ project.updated | date: "%b %Y" }}</time> · {{ project.status }}</p>
           <h2><a href="{{ project.project_url }}"{% if project.project_url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ project.title }}</a></h2>
           <p class="project-row__summary">{{ project.summary }}</p>
+          <dl class="project-details"><div><dt>Role</dt><dd>{{ project.role }}</dd></div><div><dt>Outcome</dt><dd>{{ project.outcome }}</dd></div></dl>
 
           <ul class="project-tags" aria-label="Technologies used">
             {% for tag in project.tags %}
@@ -145,8 +161,8 @@ projects:
   }
 
   .projects-page {
-    --projects-accent: #087c98;
-    --projects-accent-dark: #05586d;
+    --projects-accent: var(--brand-primary);
+    --projects-accent-dark: var(--brand-primary-hover);
     --projects-text: #1e2935;
     --projects-muted: #64707c;
     --projects-border: #dce4e8;
@@ -183,7 +199,7 @@ projects:
 
   .project-row__content h2 a:focus-visible {
     border-radius: 0.2rem;
-    outline: 3px solid rgba(8, 124, 152, 0.25);
+    outline: 3px solid var(--brand-focus);
     outline-offset: 3px;
   }
 
@@ -327,7 +343,8 @@ projects:
     outline-offset: 3px;
   }
 
-  .project-action--primary {
+  .project-action--primary,
+  .project-action--primary:visited {
     padding: 0.6rem 0.95rem;
     border: 1px solid var(--projects-accent);
     border-radius: 0.5rem;
@@ -335,7 +352,9 @@ projects:
     background: var(--projects-accent);
   }
 
-  .project-action--primary:hover {
+  .project-action--primary:hover,
+  .project-action--primary:focus,
+  .project-action--primary:active {
     border-color: var(--projects-accent-dark);
     color: #fff;
     background: var(--projects-accent-dark);
@@ -346,7 +365,7 @@ projects:
   }
 
   .project-action--secondary:hover {
-    color: #064c5e;
+    color: var(--projects-accent-dark);
   }
 
   @media (max-width: 64rem) {

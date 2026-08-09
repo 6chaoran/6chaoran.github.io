@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: essay
 title: "Review on Stanford Machine Learning Course"
 date: 2015-08-15 16:16:01 +0800
 categories: 

@@ -12,15 +12,29 @@
 </script>
 
 <!-- For all browsers -->
-<!-- Light mode -->
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-<!-- Dark mode -->
 {% if site.minimal_mistakes_skin_dark %}
   <meta name="color-scheme" content="light dark">
-  <style>
-    @import url("{{ '/assets/css/main2.css' | relative_url }}") (prefers-color-scheme: dark);
-  </style>
+  <script>
+    (function () {
+      var savedTheme;
+      try { savedTheme = localStorage.getItem("site-theme"); } catch (error) {}
+      var theme = savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    })();
+  </script>
+  <link id="theme-light" rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link id="theme-dark" rel="stylesheet" href="{{ '/assets/css/main2.css' | relative_url }}" disabled>
+  <script>
+    if (document.documentElement.dataset.theme === "dark") {
+      document.getElementById("theme-light").disabled = true;
+      document.getElementById("theme-dark").disabled = false;
+    }
+  </script>
+{% else %}
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 {% endif %}
 
 <!--[if IE]>

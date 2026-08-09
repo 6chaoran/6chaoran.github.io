@@ -1,4 +1,6 @@
 ---
+pillar: archive
+format: guide
 title: "Getting Started With Tableau"
 date:   2015-08-10 16:16:01 +0800
 classes: wide
