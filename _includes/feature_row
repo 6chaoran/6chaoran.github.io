@@ -1,4 +1,6 @@
-{% if include.id %}
+{% if include.features %}
+  {% assign feature_row = include.features %}
+{% elsif include.id %}
   {% assign feature_row = page[include.id] %}
 {% else %}
   {% assign feature_row = page.feature_row %}
@@ -16,7 +18,30 @@
 
     <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
       <div class="archive__item">
-        {% if f.image_path %}
+        {% if f.video_path %}
+          <div class="archive__item-teaser archive__item-video">
+            <video controls playsinline preload="metadata"
+              {% if f.image_path %}
+                poster=
+                  {% if f.image_path contains "://" %}
+                    "{{ f.image_path }}"
+                  {% else %}
+                    "{{ f.image_path | relative_url }}"
+                  {% endif %}
+              {% endif %}
+              aria-label="{% if f.alt %}{{ f.alt }}{% else %}{{ f.title }} video{% endif %}">
+              <source src=
+                {% if f.video_path contains "://" %}
+                  "{{ f.video_path }}"
+                {% else %}
+                  "{{ f.video_path | relative_url }}"
+                {% endif %}
+              type="video/mp4">
+              Your browser does not support embedded video.
+              <a href="{{ f.video_path | relative_url }}">Download the video</a> instead.
+            </video>
+          </div>
+        {% elsif f.image_path %}
           <div class="archive__item-teaser">
             {% if f.project_url %}
             <a href="{{ f.project_url }}" target="_blank">
@@ -45,6 +70,7 @@
               <h2 class="archive__item-title">{{ f.title }}</h2>
             {% endif %}
           {% endif %}
+
 
           {% if f.excerpt %}
             <div class="archive__item-excerpt">

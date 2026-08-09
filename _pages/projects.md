@@ -1,132 +1,398 @@
 ---
 layout: single
-title: "🚀 Featured Projects"
+title: "Featured Projects"
 permalink: /projects/
 author_profile: true
 classes: wide
 
-summarytools:
-  - image_path: assets/images/projects/summarytools-header.png    
-    project_url: https://github.com/6chaoran/jupyter-summarytools
-    alt: "screenshot of summarytools python package"
-    title: "DataFrame Summary Tool in Jupyter Notebook"
-    excerpt: |
-      Inspired by R summarytools package, I replicated a similar package in Jupyter Notebook. This is python version of summarytools, which is used to generate standardized and comprehensive summary of dataframe in Jupyter Notebooks.
-    
-      👉 Check [https://pypi.org/project/summarytools](https://pypi.org/project/summarytools) for installation & quick start.
-    
-      👉 Check [https://github.com/6chaoran/jupyter-summarytools](https://github.com/6chaoran/jupyter-summarytools) for the source code.
-        
-      👇 Click `Read More` to continue with the post.
-    url: "/posts/2021-03-11-summarytools-for-jupyter-notebook/"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-
-vital-sign-prediction:
-  - image_path: assets/images/projects/header-vital-sign-prediction.png
-    alt: "screenshot of vital sign prediction demo"
-    title: "A live demo of predictive vital measurement"
-    excerpt: |
-      A simple demonstration of vital sign prediction—covering age, BMI, heart rate, and respiratory rate—utilizing rPPG and facial recognition technology. This demo employs edge deployment via TensorFlow.js, ensuring that all data remains securely processed on your local device.
-
-      👉 Visit the <a href="https://www.ichaoran.com/posts/2021-06-11-bmi-prediction-using-tfjs/" target="_blank">link</a> to get started.
-
-      👇 Click `Read More` to continue with the post.
-    url: "/posts/2021-06-11-deploy-deep-learning-models-in-browser-using-tfjs/"
-    project_url: "/posts/2021-06-11-bmi-prediction-using-tfjs/"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-
-sgpr-profiler:
-  - image_path: assets/images/projects/sprapp.png   
-    project_url: https://spr.ichaoran.com
-    alt: "SGPR Profiler webapp screenshot"
-    title: "Singapore PR Profile Accessment App"
-    excerpt: |
-      SGPR Profiler is a profile assessment web app designed to estimate the odds of obtaining PR residency based on voluntarily contributed past records. In this app, users are allowed to view recent application profiles contributed by others. Some high-level insights/statistics are also provided for quick reference. 👉 Visit the <a href="https://spr.ichaoran.com" target="_blank">link</a> to get started.
-
-      👇 Click `Read More` to continue with the post.
-    url: "/posts/2023-06-16-sgprprofile-vue-demo/"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-
-
-sgp1:
-  - image_path: assets/images/projects/sgp1.png  
-    project_url: https://sgp1.ichaoran.com  
-    alt: "SGP1 webapp screenshot"
+projects:
+  - id: sgp1
+    updated: "2026-08-01"
+    image_path: assets/images/projects/sgp1.png
+    video_path: assets/videos/projects/sgp1-school-finder-promo.mp4
+    project_url: https://sgp1.ichaoran.com
+    alt: "Promo video for the Singapore Primary School Registration Companion"
     title: "Singapore Primary School Registration Companion"
-    excerpt: | 
-      I know, I know "every primary school is a good school", but kiasu parents still cautiously plan their strategies for their little ones' primary one registration. Some quetisons are appareantly brother the parents. Shall I join the parent voluneer program now to secure the 2B round ? Shall I move to another district that is less competitive in P1 application?
-      
-      I hope this is the tool, that should provide some number insights to help with your important decisions. Lastly, may your kid goes to the dream school, as you wish!
+    summary: "A planning companion that helps parents compare school options and make more informed Primary One registration decisions."
+    tags:
+      - Python
+      - Streamlit
+      - Pandas
+      - Plotly
 
-      👉 Visit the <a href="https://sgp1.ichaoran.com" target="_blank">link</a> to get started.
+  - id: vital-sign-prediction
+    updated: "2024-08-24"
+    image_path: assets/images/projects/header-vital-sign-prediction.png
+    alt: "Vital sign prediction demo showing estimated pulse and respiratory measurements"
+    title: "A Live Demo of Predictive Vital Measurement"
+    summary: "An in-browser demo that estimates age, BMI, heart rate, and respiratory rate while keeping camera data on the user's device."
+    project_url: "/posts/2021-06-11-bmi-prediction-using-tfjs/"
+    case_url: "/posts/2021-06-11-deploy-deep-learning-models-in-browser-using-tfjs/"
+    tags:
+      - TensorFlow.js
+      - rPPG
+      - Edge AI
 
-    # url: ""
-    # btn_label: "Read More"
-    # btn_class: 'btn--primary'
+  - id: summarytools
+    updated: "2024-08-24"
+    image_path: assets/images/projects/summarytools-header.png
+    alt: "DataFrame summary output in a Jupyter Notebook"
+    title: "DataFrame Summary Tool in Jupyter Notebook"
+    summary: "A Python implementation of summarytools for generating standardized, comprehensive DataFrame summaries inside Jupyter."
+    project_url: https://pypi.org/project/summarytools
+    case_url: "/posts/2021-03-11-summarytools-for-jupyter-notebook/"
+    source_url: https://github.com/6chaoran/jupyter-summarytools
+    tags:
+      - Python
+      - Pandas
+      - Jupyter
+      - Open source
 
-med-doc-parser:
-  - image_path: assets/images/projects/med-doc-parser.png   
-    project_url: https://med-doc-parser.ichaoran.com 
-    alt: "MedDoc Parser webapp screenshot"
+  - id: sgpr-profiler
+    updated: "2024-08-24"
+    image_path: assets/images/projects/sprapp.png
+    alt: "SGPR Profiler web application showing recent assessment records"
+    title: "Singapore PR Profile Assessment App"
+    summary: "A profile assessment app that estimates PR residency odds from voluntarily contributed records and shares high-level insights."
+    project_url: https://spr.ichaoran.com
+    case_url: "/posts/2023-06-16-sgprprofile-vue-demo/"
+    tags:
+      - Python
+      - Streamlit
+      - Pandas
+      - Data analysis
+
+  - id: med-doc-parser
+    updated: "2024-08-17"
+    image_path: assets/images/projects/med-doc-parser.png
+    alt: "Medical Document Parser web application"
     title: "Medical Document Parser"
-    excerpt: | 
-      In Singapore, I've noticed a common challenge: our medical lab reports are often still in non-digital formats, making it tough to manage our health data effectively. Inspired by this, I've developed a web app, which allows users to effortlessly convert photos of their medical reports into organized tables, enabling easier analysis of the health history. I'm excited to share this tool, hoping it can help others navigate their health journeys with greater ease.
-
-      👉 Visit the <a href="https://med-doc-parser.ichaoran.com" target="_blank">link</a> to get started.
-
-    # url: ""
-    # btn_label: "Read More"
-    # btn_class: 'btn--primary'
-
+    summary: "A web app that turns photos and PDFs of medical reports into structured tables for easier review of personal health history."
+    project_url: https://med-doc-parser.ichaoran.com
+    tags:
+      - Python
+      - OCR
+      - Streamlit
+      - Pandas
 ---
-{% include feature_row id="summarytools" type="left" %}
-{% include feature_row id="vital-sign-prediction" type="left" %}
-{% include feature_row id="sgpr-profiler" type="left" %}
-{% include feature_row id="sgp1" type="left" %}
-{% include feature_row id="med-doc-parser" type="left" %}
 
+<div class="projects-page">
+  <section class="projects-intro" aria-labelledby="projects-intro-copy">
+    <div class="projects-intro__content">
+      <p class="projects-eyebrow">Selected work · {{ page.projects | size }} projects</p>
+      <p id="projects-intro-copy" class="projects-intro__copy">
+        Applied data science projects built to solve practical problems, share useful tools, and keep learning in public.
+      </p>
+    </div>
+  </section>
+
+  {% assign sorted_projects = page.projects | sort: "updated" | reverse %}
+  <section class="projects-list" aria-label="Project portfolio">
+    {% for project in sorted_projects %}
+      <article class="project-card" id="{{ project.id }}">
+        <div class="project-row__media">
+          {% if project.video_path %}
+            <video controls playsinline preload="metadata" poster="{{ project.image_path | relative_url }}" aria-label="{{ project.alt }}">
+              <source src="{{ project.video_path | relative_url }}" type="video/mp4">
+              Your browser does not support embedded video.
+              <a href="{{ project.video_path | relative_url }}">Download the video</a> instead.
+            </video>
+          {% else %}
+            <a href="{{ project.project_url }}"{% if project.project_url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %} aria-label="View {{ project.title }}">
+              <img src="{{ project.image_path | relative_url }}" alt="{{ project.alt }}" loading="lazy">
+            </a>
+          {% endif %}
+        </div>
+
+        <div class="project-row__content">
+          <p class="project-row__meta"><time datetime="{{ project.updated }}">Updated {{ project.updated | date: "%b %Y" }}</time></p>
+          <h2><a href="{{ project.project_url }}"{% if project.project_url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ project.title }}</a></h2>
+          <p class="project-row__summary">{{ project.summary }}</p>
+
+          <ul class="project-tags" aria-label="Technologies used">
+            {% for tag in project.tags %}
+              <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+
+          <div class="project-actions">
+            <a class="project-action project-action--primary" href="{{ project.project_url }}"{% if project.project_url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>
+              Explore project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            {% if project.case_url %}
+              <a class="project-action project-action--secondary" href="{{ project.case_url | relative_url }}">
+                <i class="far fa-file-alt" aria-hidden="true"></i> Case study
+              </a>
+            {% endif %}
+            {% if project.source_url %}
+              <a class="project-action project-action--secondary" href="{{ project.source_url }}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github" aria-hidden="true"></i> Source code
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+</div>
 
 <style>
-
-  #page-title {
-    margin: 20px 0 40px 0;
+  .page__title {
+    margin-bottom: 0.35rem;
+    color: #17212b;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    letter-spacing: -0.035em;
   }
 
-  .archive__item-teaser {
-    /* width: 40%;
-    min-width: 380px; */
-    border: 1px solid;
-    border-radius: 0.5rem;
-    max-height: 300px;
-    background-position: center;
+  .projects-page {
+    --projects-accent: #087c98;
+    --projects-accent-dark: #05586d;
+    --projects-text: #1e2935;
+    --projects-muted: #64707c;
+    --projects-border: #dce4e8;
+    --projects-surface: #f6f9fa;
+    max-width: 82rem;
+    color: var(--projects-text);
   }
 
- .feature__wrapper .archive__item-title {
-    margin-top: 0;
+  .page__content p {
+    margin: 0
   }
 
-  /* .archive__item {
+  .projects-intro {
+    padding: clamp(1.25rem, 2.5vw, 1rem) 0;
+  }
+
+  .projects-eyebrow,
+  .project-row__meta {
+    margin: 0;
+    color: var(--projects-accent-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .projects-intro__copy {
+    max-width: 46rem;
+    margin: 0.7rem 0 0;
+    color: #3e4a56;
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    line-height: 1.6;
+  }
+
+  .project-row__content h2 a:focus-visible {
+    border-radius: 0.2rem;
+    outline: 3px solid rgba(8, 124, 152, 0.25);
+    outline-offset: 3px;
+  }
+
+  .projects-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  .project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+    min-width: 0;
+    overflow: hidden;
+    align-items: stretch;
+    border: 1px solid var(--projects-border);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 0.25rem 1rem rgba(28, 48, 61, 0.05);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  }
+
+  .project-card:hover {
+    border-color: #b8cbd2;
+    box-shadow: 0 0.8rem 2rem rgba(28, 48, 61, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .project-row__media {
+    overflow: hidden;
+    min-height: 19rem;
+    background: #f3f5f6;
+  }
+
+  .project-row__media a,
+  .project-row__media img,
+  .project-row__media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-row__media img,
+  .project-row__media video {
+    object-fit: cover;
+  }
+
+  .project-row__media img {
+    transition: transform 400ms ease;
+  }
+
+  .project-card:hover .project-row__media img {
+    transform: scale(1.025);
+  }
+
+  .project-row__content {
     display: flex;
-    flex-wrap: wrap
+    flex: 1;
+    flex-direction: column;
+    padding: clamp(1.25rem, 2.5vw, 2rem);
   }
 
-
-
-  .archive__item-body {
-    margin-left: 1rem;
-
+  .project-row__meta {
+    margin-bottom: 0.65rem;
+    color: #75818c;
+    font-size: 0.64rem;
   }
 
-  .feature__item--left .archive__item-body {
-    width: 50%;
-    min-width: 380px;
+  .project-row__content h2 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
 
-  } */
+  .project-row__content h2 a {
+    color: var(--projects-text);
+    text-decoration: none;
+  }
 
-  .btn--primary {
-    background-color: #2f7d95;
+  .project-row__content h2 a:hover {
+    color: var(--projects-accent);
+  }
+
+  .project-row__summary {
+    max-width: 44rem;
+    margin: 0;
+    color: #4f5a65;
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .project-tags li {
+    margin: 0;
+    padding: 0.28rem 0.58rem;
+    border: 1px solid #acd0da;
+    border-radius: 0.25rem;
+    color: #317284;
+    background: #f8fcfd;
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1.35rem;
+  }
+
+  .project-action {
+    display: inline-flex;
+    gap: 0.55rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.55rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  }
+
+  .project-action:hover {
+    transform: translateY(-1px);
+  }
+
+  .project-action:focus-visible {
+    outline: 3px solid rgba(8, 124, 152, 0.25);
+    outline-offset: 3px;
+  }
+
+  .project-action--primary {
+    padding: 0.6rem 0.95rem;
+    border: 1px solid var(--projects-accent);
+    border-radius: 0.5rem;
+    color: #fff;
+    background: var(--projects-accent);
+  }
+
+  .project-action--primary:hover {
+    border-color: var(--projects-accent-dark);
+    color: #fff;
+    background: var(--projects-accent-dark);
+  }
+
+  .project-action--secondary {
+    color: var(--projects-accent-dark);
+  }
+
+  .project-action--secondary:hover {
+    color: #064c5e;
+  }
+
+  @media (max-width: 64rem) {
+    .project-card {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+    }
+  }
+
+  @media (max-width: 48rem) {
+    .page__title {
+      display: none;
+    }
+
+    .projects-intro {
+      display: none;
+    }
+
+    .project-card {
+      grid-template-columns: 1fr;
+    }
+
+    .project-row__media {
+      min-height: 0;
+      aspect-ratio: 16 / 9;
+    }
+
+    .project-row__content h2 {
+      font-size: 1.35rem;
+    }
+
+    .project-row__summary {
+      font-size: 0.92rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-action,
+    .project-row__media img {
+      transition: none;
+    }
+
+    .project-card:hover,
+    .project-action:hover,
+    .project-card:hover .project-row__media img {
+      transform: none;
+    }
   }
 </style>
