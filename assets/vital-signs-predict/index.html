@@ -15,13 +15,40 @@
     <link href="/assets/vital-signs-predict/js/chunk-vendors.cc304289.js" rel="preload" as="script">
     <link href="/assets/vital-signs-predict/css/chunk-vendors.f0f8f2f7.css" rel="stylesheet">
     <link href="/assets/vital-signs-predict/css/app.0c318091.css" rel="stylesheet">
+    <link href="/assets/vital-signs-predict/css/polish.css" rel="stylesheet">
 </head>
 
-<body><noscript><strong>We're sorry but vital-signs-pred doesn't work properly without JavaScript enabled. Please enable
-            it to continue.</strong></noscript>
-    <div id="app"></div>
+<body>
+    <main class="experience">
+        <header class="experience__header">
+            <div class="experience__brand" aria-label="Vital Lens">
+                <span class="experience__mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img"><path d="M3 12h4l2.2-5 4.1 10 2.2-5H21"/></svg>
+                </span>
+                <span>Vital Lens</span>
+            </div>
+            <div class="experience__badge"><span aria-hidden="true"></span> Runs locally in your browser</div>
+        </header>
+
+        <section class="experience__intro" aria-labelledby="experience-title">
+            <p class="experience__eyebrow">Camera-based experiment</p>
+            <h1 id="experience-title">Measure with a moment of stillness.</h1>
+            <p>Position your face, hold steady for 15 seconds, and let the on-device models estimate four wellness signals.</p>
+        </section>
+
+        <section class="app-shell" aria-label="Vital measurement controls">
+            <noscript><strong>Please enable JavaScript to use this experiment.</strong></noscript>
+            <div id="app"></div>
+        </section>
+
+        <footer class="experience__footer">
+            <span>Experimental estimates only</span>
+            <span>Not intended for medical diagnosis</span>
+        </footer>
+    </main>
     <script src="/assets/vital-signs-predict/js/chunk-vendors.cc304289.js"></script>
     <script src="/assets/vital-signs-predict/js/app.66418a86.js"></script>
+    <script src="/assets/vital-signs-predict/js/polish.js"></script>
 </body>
 
 </html>

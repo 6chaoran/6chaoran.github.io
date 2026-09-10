@@ -1,7 +1,7 @@
 ---
 pillar: archive
 format: project
-title: "Live demo of predictive vital measurement from browser using Tensorflow.js"
+title: "Live demo of predictive vital measurement from browser using TensorFlow.js"
 date: 2021-06-11 17:30:01 +0800
 toc: false
 toc_sticky: false
@@ -10,38 +10,77 @@ categories:
 classes: wide
 tags:
 - javascript
-excerpt: "An example of deploying deep learning model in browser using tensorflow.js"
+excerpt: "An example of deploying a deep learning model in the browser using TensorFlow.js"
 ---
 
-<html lang="en">
+<style>
+  .vital-demo{--demo-ink:#172033;--demo-muted:#667085;--demo-line:rgba(23,32,51,.12);--demo-surface:#f5f7fb;--demo-card:#fff;--demo-accent:#1976d2;max-width:1120px;margin:0 auto 3rem;color:var(--demo-ink)}
+  .vital-demo__intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:clamp(1.5rem,4vw,3.75rem);align-items:center;padding:clamp(1.5rem,4vw,3.5rem);overflow:hidden;border:1px solid var(--demo-line);border-radius:24px;background:radial-gradient(circle at 10% 0%,rgba(25,118,210,.14),transparent 35%),var(--demo-surface)}
+  .vital-demo__eyebrow{display:inline-flex;gap:.45rem;align-items:center;margin:0 0 1rem!important;color:var(--demo-accent);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  .vital-demo__eyebrow:before{width:.5rem;height:.5rem;border-radius:50%;background:currentColor;box-shadow:0 0 0 5px rgba(25,118,210,.12);content:""}
+  .vital-demo__intro h2{margin:0 0 1rem;color:var(--demo-ink);font-size:clamp(1.8rem,4vw,3.25rem);line-height:1.05;letter-spacing:-.045em}
+  .vital-demo__lede{max-width:38rem;margin:0!important;color:var(--demo-muted);font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.7}
+  .vital-demo__preview{position:relative;margin:0}
+  .vital-demo__preview:before{position:absolute;inset:8% -5% -8% 10%;z-index:0;border-radius:24px;background:rgba(25,118,210,.14);content:"";transform:rotate(3deg)}
+  .vital-demo__preview img{position:relative;z-index:1;display:block;width:100%;border:1px solid rgba(23,32,51,.14);border-radius:16px;box-shadow:0 24px 60px rgba(23,32,51,.18)}
+  .vital-demo__steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.25rem 0 2rem}
+  .vital-demo__step{display:flex;gap:.8rem;align-items:center;min-width:0;padding:1rem;border:1px solid var(--demo-line);border-radius:14px;background:var(--demo-card)}
+  .vital-demo__step span{display:grid;width:2rem;height:2rem;flex:0 0 auto;place-items:center;border-radius:50%;color:#fff;background:var(--demo-accent);font-size:.78rem;font-weight:700}
+  .vital-demo__step p{margin:0!important;color:var(--demo-ink);font-size:.86rem;font-weight:600;line-height:1.35}
+  .vital-demo__panel{overflow:hidden;border:1px solid var(--demo-line);border-radius:20px;background:var(--demo-card);box-shadow:0 18px 55px rgba(23,32,51,.1)}
+  .vital-demo__panel-header{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid var(--demo-line)}
+  .vital-demo__panel-header h3{margin:0;color:var(--demo-ink);font-size:1rem}
+  .vital-demo__privacy{margin:0!important;color:var(--demo-muted);font-size:.72rem;line-height:1.4;text-align:right}
+  .vital-demo__frame-wrap{position:relative;min-height:780px;background:#fafbfc}
+  .vital-demo__loading{position:absolute;inset:0;z-index:2;display:grid;place-content:center;justify-items:center;gap:.85rem;color:var(--demo-muted);background:var(--demo-card);transition:opacity 220ms ease,visibility 220ms ease}
+  .vital-demo__loading:before{width:2rem;height:2rem;border:3px solid rgba(25,118,210,.18);border-top-color:var(--demo-accent);border-radius:50%;content:"";animation:vital-demo-spin .8s linear infinite}
+  .vital-demo__frame-wrap.is-ready .vital-demo__loading{visibility:hidden;opacity:0}
+  .vital-demo__frame{display:block;width:100%;height:780px;border:0;background:#fff}
+  @keyframes vital-demo-spin{to{transform:rotate(360deg)}}
+  @media(max-width:760px){.vital-demo__intro{grid-template-columns:1fr}.vital-demo__steps{grid-template-columns:1fr}.vital-demo__panel-header{align-items:flex-start;flex-direction:column}.vital-demo__privacy{text-align:left}.vital-demo__frame-wrap,.vital-demo__frame{height:720px;min-height:720px}}
+  [data-theme="dark"] .vital-demo{--demo-ink:#f2f4f7;--demo-muted:#a9b2c3;--demo-line:rgba(255,255,255,.13);--demo-surface:#151b27;--demo-card:#101620}
+  @media(prefers-reduced-motion:reduce){.vital-demo__loading:before{animation:none}.vital-demo__loading{transition:none}}
+</style>
 
-<div style="margin-bottom: 1rem; display: flex; justify-content: center;">
-    <img id="loadingGif" src="/assets/images/projects/vital-sign-prediction.gif" alt="instructions for demo of using vital sign prediction"></img>
-</div>
+<section class="vital-demo" aria-labelledby="vital-demo-title">
+  <div class="vital-demo__intro">
+    <div>
+      <p class="vital-demo__eyebrow">TensorFlow.js experiment</p>
+      <h2 id="vital-demo-title">Vital estimates, right in your browser</h2>
+      <p class="vital-demo__lede">Use your camera to explore an experimental model that estimates age, BMI, and resting heart rate—without leaving this page.</p>
+    </div>
+    <figure class="vital-demo__preview">
+      <img src="/assets/images/projects/vital-sign-prediction.gif" alt="Walkthrough of the browser-based vital sign prediction demo" loading="eager">
+    </figure>
+  </div>
 
-<hr>
+  <div class="vital-demo__steps" aria-label="How to use the demo">
+    <div class="vital-demo__step"><span>1</span><p>Allow camera access</p></div>
+    <div class="vital-demo__step"><span>2</span><p>Center your face in frame</p></div>
+    <div class="vital-demo__step"><span>3</span><p>View the model estimates</p></div>
+  </div>
 
-<div>
-    <p>Now try yourself to predict your own age, BMI, and resting heart rate ...</p>
-</div>
-
-<iframe 
-    id="predictionIframe"
-    src="/assets/vital-signs-predict/" 
-    frameborder="0"
-    allowfullscreen
-    scrolling="no"
-    allowtransparency="true"
-    style="width:100%;height:780px;overflow:hidden;display:none;" <!-- Initially hidden -->
-></iframe>
+  <div class="vital-demo__panel">
+    <div class="vital-demo__panel-header">
+      <h3>Try the live experiment</h3>
+      <p class="vital-demo__privacy">Camera permission is required. Results are estimates, not medical advice.</p>
+    </div>
+    <div class="vital-demo__frame-wrap" id="predictionFrameWrap">
+      <div class="vital-demo__loading" role="status">Loading the model…</div>
+      <iframe class="vital-demo__frame" id="predictionIframe" src="/assets/vital-signs-predict/" title="Browser-based vital sign prediction demo" allow="camera" allowfullscreen></iframe>
+    </div>
+  </div>
+  <noscript><p>Please enable JavaScript to use the live prediction demo.</p></noscript>
+</section>
 
 <script>
-    // Wait for the GIF to fully load
-    document.getElementById('loadingGif').addEventListener('load', function() {
-        // Show the iframe after the GIF is loaded
-        document.getElementById('predictionIframe').style.display = 'block';
-    });
+  (function () {
+    var frame = document.getElementById('predictionIframe');
+    var wrapper = document.getElementById('predictionFrameWrap');
+    if (frame && wrapper) {
+      frame.addEventListener('load', function () {
+        wrapper.classList.add('is-ready');
+      });
+    }
+  }());
 </script>
-
-
-</html>
