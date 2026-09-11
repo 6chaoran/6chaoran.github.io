@@ -1,5 +1,16 @@
 source "https://rubygems.org"
-ruby "~> 3.1.0"
+ruby "~> 4.0.0"
+
+# GitHub Pages 223 pins Liquid 4.0.3, which still calls the taint API removed
+# in Ruby 4. Preserve its final no-op behavior until GitHub Pages updates it.
+unless Object.method_defined?(:tainted?)
+  ::Object.class_eval do
+    define_method(:tainted?) { false }
+    define_method(:taint) { self }
+    define_method(:untaint) { self }
+  end
+end
+
 gem "github-pages", group: :jekyll_plugins
 gem "csv"
 gem "base64"

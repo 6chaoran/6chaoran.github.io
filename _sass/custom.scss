@@ -71,6 +71,30 @@
   outline-offset: 2px;
 }
 
+#site-nav .greedy-nav__toggle {
+  color: $masthead-link-color;
+}
+
+#site-nav .greedy-nav__toggle:hover {
+  color: $primary-color;
+}
+
+#site-nav .greedy-nav__toggle:focus-visible {
+  border-radius: 50%;
+  outline: 3px solid var(--brand-focus);
+  outline-offset: 2px;
+}
+
+#site-nav .greedy-nav__toggle .navicon,
+#site-nav .greedy-nav__toggle .navicon::before,
+#site-nav .greedy-nav__toggle .navicon::after {
+  background: currentColor;
+}
+
+#site-nav .greedy-nav__toggle.close .navicon {
+  background: transparent;
+}
+
 .theme__icon {
   width: 1.1rem;
   height: 1.1rem;
