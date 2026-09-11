@@ -4,11 +4,11 @@ Jekyll source for <https://www.ichaoran.com>.
 
 ## Toolchain
 
-- Ruby 2.6.10 (pinned in `.ruby-version` and `.tool-versions`)
+- Ruby 3.1.7 (pinned in `.ruby-version` and `.tool-versions`)
 - Bundler 2.4.6 (pinned in `Gemfile.lock`)
 - GitHub Pages 223 / Jekyll 3.9.0
 
-Ruby 2.6 is the reproducible legacy baseline and is end-of-life. Upgrade it in a dedicated change with URL and visual regression checks.
+Ruby 3.1.7 is the supported local-development and CI runtime for this site.
 
 ## Test the site locally
 

@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby "~> 3.1.0"
 gem "github-pages", group: :jekyll_plugins
 gem "csv"
 gem "base64"
