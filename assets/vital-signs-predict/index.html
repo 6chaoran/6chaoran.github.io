@@ -16,6 +16,27 @@
     <link href="/assets/vital-signs-predict/css/chunk-vendors.f0f8f2f7.css" rel="stylesheet">
     <link href="/assets/vital-signs-predict/css/app.0c318091.css" rel="stylesheet">
     <link href="/assets/vital-signs-predict/css/polish.css" rel="stylesheet">
+    <style>
+        /* Keep the responsive camera surface and its overlay on the same square. */
+        .app-shell #overlay {
+            width: min(100%, 480px) !important;
+            max-width: 100%;
+            height: auto !important;
+            aspect-ratio: 1 / 1;
+        }
+
+        .app-shell #webcam,
+        .app-shell #mask {
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: none;
+        }
+
+        .app-shell #webcam {
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,7 +69,7 @@
     </main>
     <script src="/assets/vital-signs-predict/js/chunk-vendors.cc304289.js"></script>
     <script src="/assets/vital-signs-predict/js/app.66418a86.js"></script>
-    <script src="/assets/vital-signs-predict/js/polish.js"></script>
+    <script src="/assets/vital-signs-predict/js/polish.js?v=3"></script>
 </body>
 
 </html>
