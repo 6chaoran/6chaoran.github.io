@@ -5,6 +5,76 @@
     }
   }
 
+  function setCameraLayout(isActive) {
+    var card = document.querySelector('.app-shell');
+    var firstRect = card && card.getBoundingClientRect();
+    if (isActive) document.body.classList.remove('results-active');
+    document.body.classList.toggle('camera-active', isActive);
+
+    if (!card || !firstRect || !card.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var lastRect = card.getBoundingClientRect();
+    var scaleX = lastRect.width ? firstRect.width / lastRect.width : 1;
+    var scaleY = lastRect.height ? firstRect.height / lastRect.height : 1;
+    card.animate([
+      {
+        transformOrigin: 'top left',
+        transform: 'translate(' + (firstRect.left - lastRect.left) + 'px,' + (firstRect.top - lastRect.top) + 'px) scale(' + scaleX + ',' + scaleY + ')'
+      },
+      { transformOrigin: 'top left', transform: 'none' }
+    ], {
+      duration: 420,
+      easing: 'cubic-bezier(.22,.8,.25,1)'
+    });
+  }
+
+  function polishResults(results) {
+    if (results.dataset.polished === 'true') return;
+
+    var labels = { AGE: 'Age', BMI: 'BMI', HR: 'Heart rate', RR: 'Respiratory rate' };
+    results.querySelectorAll('li').forEach(function (item) {
+      var match = item.textContent.trim().match(/^(AGE|BMI|HR|RR)\s*:\s*(.*)$/i);
+      if (!match) return;
+
+      var key = match[1].toUpperCase();
+      var value = match[2].replace(/\+\/-/g, '±');
+      item.classList.add('prediction-card', 'prediction-card--' + key.toLowerCase());
+      item.innerHTML = '<span class="prediction-card__label">' + labels[key] + '</span><strong class="prediction-card__value">' + value + '</strong>';
+    });
+    results.dataset.polished = 'true';
+  }
+
+  function watchResults() {
+    var results = document.getElementById('results');
+    if (!results) return;
+
+    function syncResultsState() {
+      var isVisible = window.getComputedStyle(results).display !== 'none';
+      document.body.classList.toggle('results-active', isVisible);
+      if (isVisible) {
+        document.body.classList.remove('camera-active');
+        polishResults(results);
+      }
+    }
+
+    new MutationObserver(syncResultsState).observe(results, {
+      attributes: true,
+      attributeFilter: ['style'],
+      childList: true,
+      subtree: true
+    });
+    syncResultsState();
+  }
+
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest && event.target.closest('.v-btn');
+    if (!button) return;
+
+    var label = button.textContent.trim().toLowerCase();
+    if (label === 'start camera') setCameraLayout(true);
+    if (label === 'stop camera') setCameraLayout(false);
+  });
+
   reportProgress(20, 'Preparing the experiment…');
 
   function enhance() {
@@ -32,6 +102,7 @@
       if (label === 'stop camera') button.setAttribute('aria-label', 'Disable camera');
       if (label === 'start recording') button.setAttribute('aria-label', 'Begin 15-second measurement');
     });
+    watchResults();
     return true;
   }
 

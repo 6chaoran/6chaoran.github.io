@@ -24,12 +24,13 @@ projects:
       - TailwindCSS
 
   - id: vital-sign-prediction
-    updated: "2024-08-24"
-    image_path: assets/images/projects/header-vital-sign-prediction.png
-    alt: "Vital sign prediction demo showing estimated pulse and respiratory measurements"
-    title: "A Live Demo of Predictive Vital Measurement"
-    summary: "An in-browser demo that estimates age, BMI, heart rate, and respiratory rate while keeping camera data on the user's device."
-    role: "Model deployment and browser application"
+    updated: "2026-09-12"
+    image_path: assets/images/projects/vital-lens-project.png
+    video_path: assets/videos/projects/vital-lens-demo.mp4
+    alt: "Vital Lens interface showing four private, on-device health estimates"
+    title: "Vital Lens: Four Signals, One Private Browser"
+    summary: "A redesigned in-browser experiment that estimates age, BMI, heart rate, and respiratory rate—with a clearer model-loading journey and camera data kept on-device."
+    role: "Experience design, model deployment, and browser application"
     status: "Research prototype"
     outcome: "Demonstrates privacy-aware, on-device inference without uploading camera frames."
     project_url: "/posts/2021-06-11-bmi-prediction-using-tfjs/"

@@ -34,7 +34,7 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
   .vital-demo__loading-inner{width:min(100%,680px)}
   .vital-demo__preview{position:relative;overflow:hidden;aspect-ratio:600/508;margin:0 0 1.35rem;border:0;border-radius:22px;background:transparent;box-shadow:0 24px 55px rgba(23,32,51,.2);isolation:isolate}
   .vital-demo__preview:after{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 68%,rgba(17,24,39,.48));content:"";pointer-events:none}
-  .vital-demo__preview img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;opacity:1;filter:brightness(1.12) saturate(1.04)}
+  .vital-demo__preview video{display:block;width:100%;height:100%;object-fit:contain;object-position:center;opacity:1;filter:brightness(1.12) saturate(1.04)}
   .vital-demo__preview-top{position:absolute;top:1rem;right:1rem;z-index:3;display:flex;gap:.5rem;align-items:center;padding:.5rem .7rem;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#fff;background:rgba(17,24,39,.68);font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(8px)}
   .vital-demo__preview-top:before{width:.45rem;height:.45rem;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.18);content:""}
   .vital-demo__preview-caption{position:absolute;right:1rem;bottom:1rem;left:1rem;z-index:3;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;color:#fff}
@@ -42,6 +42,7 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
   .vital-demo__signal{display:flex;gap:.28rem;align-items:flex-end;height:1.35rem}.vital-demo__signal i{display:block;width:.22rem;border-radius:999px;background:#60a5fa;animation:vital-demo-signal 1.15s ease-in-out infinite}.vital-demo__signal i:nth-child(1){height:35%}.vital-demo__signal i:nth-child(2){height:75%;animation-delay:-.3s}.vital-demo__signal i:nth-child(3){height:48%;animation-delay:-.6s}.vital-demo__signal i:nth-child(4){height:100%;animation-delay:-.9s}
   .vital-demo__loading-meta{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:.65rem}.vital-demo__loading-status{font-size:.78rem;font-weight:650;line-height:1.4}.vital-demo__loading-percent{color:var(--demo-accent);font-size:.78rem;font-weight:750;font-variant-numeric:tabular-nums}
   .vital-demo__progress{overflow:hidden;height:.5rem;margin-bottom:1.25rem;border-radius:999px;background:#e5eaf1}.vital-demo__progress-bar{width:8%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#1976d2,#57a4ef);box-shadow:0 0 16px rgba(25,118,210,.35);transition:width 420ms cubic-bezier(.22,.8,.25,1)}
+  .vital-demo__load-row{text-align:center}.vital-demo__load{min-height:44px;padding:.7rem 1.25rem;border:1px solid var(--demo-accent);border-radius:999px;color:#fff;background:var(--demo-accent);box-shadow:0 8px 20px rgba(25,118,210,.24);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}.vital-demo__load:hover{background:#125ca8}.vital-demo__load:disabled{border-color:var(--demo-line);color:#8d99aa;background:#edf1f5;box-shadow:none;cursor:wait}.vital-demo__frame-wrap.is-loading .vital-demo__load-row{display:none}
   .vital-demo__ready{display:none;padding:.5rem 0 0;text-align:center}.vital-demo__ready-kicker{display:inline-flex;gap:.5rem;align-items:center;margin:0 0 .55rem!important;color:#18735f;font-size:.7rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}.vital-demo__ready-kicker:before{width:.55rem;height:.55rem;border-radius:50%;background:#20a77f;box-shadow:0 0 0 5px rgba(32,167,127,.12);content:""}.vital-demo__ready h4{margin:0 0 .55rem;color:var(--demo-ink);font-size:clamp(1.35rem,3vw,2rem);letter-spacing:-.035em}.vital-demo__ready>p{max-width:34rem;margin:0 auto 1.15rem!important;color:var(--demo-muted);font-size:.86rem;line-height:1.6}.vital-demo__ready-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:0 0 1.25rem;padding:0;list-style:none;text-align:left}.vital-demo__ready-steps li{display:flex;gap:.55rem;align-items:center;padding:.7rem;border:1px solid var(--demo-line);border-radius:12px;background:#fbfcfe;color:var(--demo-muted);font-size:.72rem}.vital-demo__ready-steps b{display:grid;width:1.45rem;height:1.45rem;flex:0 0 auto;place-items:center;border-radius:50%;color:var(--demo-accent);background:rgba(25,118,210,.1);font-size:.65rem}
   .vital-demo__start{min-height:44px;padding:.7rem 1.25rem;border:1px solid var(--demo-line);border-radius:999px;color:#8d99aa;background:#edf1f5;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:not-allowed}
   .vital-demo__start:not(:disabled){border-color:var(--demo-accent);color:#fff;background:var(--demo-accent);box-shadow:0 8px 20px rgba(25,118,210,.24);cursor:pointer}
@@ -69,7 +70,7 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
     .vital-demo__frame{height:900px}
     .vital-demo__loading{padding:1rem}
     .vital-demo__preview{margin-bottom:.85rem;border-radius:15px}
-    .vital-demo__preview img{height:100%}
+    .vital-demo__preview video{height:100%}
     .vital-demo__preview-top{top:.65rem;right:.65rem;padding:.38rem .55rem;font-size:.58rem}
     .vital-demo__preview-caption{right:.75rem;bottom:.7rem;left:.75rem}.vital-demo__preview-caption span{font-size:.64rem}
     .vital-demo__loading-meta{margin-bottom:.45rem}.vital-demo__progress{margin-bottom:.7rem}
@@ -86,7 +87,7 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
     .vital-demo__frame-wrap.is-ready{height:410px;min-height:410px}
     .vital-demo__frame-wrap.is-started{height:860px;min-height:860px}
     .vital-demo__frame{height:860px}
-    .vital-demo__preview img{height:100%}
+    .vital-demo__preview video{height:100%}
   }
   [data-theme="dark"] .vital-demo{--demo-ink:#f2f4f7;--demo-muted:#a9b2c3;--demo-line:rgba(255,255,255,.13);--demo-surface:#151b27;--demo-card:#101620}
   @media(prefers-reduced-motion:reduce){.vital-demo__loading,.vital-demo__frame,.vital-demo__progress-bar{transition:none}.vital-demo__signal i{animation:none}.vital-demo__frame-wrap.is-ready .vital-demo__ready{animation:none}}
@@ -117,19 +118,13 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
         <div class="vital-demo__loading" role="status" aria-live="polite">
           <div class="vital-demo__loading-inner">
             <div class="vital-demo__preview">
-              <img id="predictionPreview" src="/assets/images/projects/vital-sign-prediction.gif" alt="Preview of a face-centered, browser-based vital sign reading" loading="eager" fetchpriority="high" decoding="async">
+              <video src="/assets/videos/projects/vital-lens-demo.mp4" aria-label="Preview of a face-centered, browser-based vital sign reading" autoplay muted loop playsinline preload="metadata"></video>
               <span class="vital-demo__preview-top">On-device preview</span>
               <div class="vital-demo__preview-caption"><div><strong>A camera becomes a sensor</strong><span>No image leaves this browser.</span></div><span class="vital-demo__signal" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
             </div>
-            <div class="vital-demo__loading-meta"><span class="vital-demo__loading-status" id="predictionLoadingStatus">Starting the experiment…</span><span class="vital-demo__loading-percent" id="predictionLoadingPercent">8%</span></div>
-            <div class="vital-demo__progress" role="progressbar" aria-label="Model loading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="8"><div class="vital-demo__progress-bar" id="predictionProgressBar"></div></div>
-            <div class="vital-demo__ready">
-              <p class="vital-demo__ready-kicker">Models ready</p>
-              <h4>Your experiment is ready to begin.</h4>
-              <p>Give the camera a clear view of your face, then stay comfortably still while the model takes a 15-second reading.</p>
-              <ol class="vital-demo__ready-steps"><li><b>1</b>Allow camera access</li><li><b>2</b>Center your face</li><li><b>3</b>Hold still for 15 seconds</li></ol>
-              <button class="vital-demo__start" id="predictionStart" type="button" aria-controls="predictionIframe" aria-expanded="false" disabled>Preparing the demo…</button>
-            </div>
+            <div class="vital-demo__loading-meta"><span class="vital-demo__loading-status" id="predictionLoadingStatus">Models are ready to load when you are.</span><span class="vital-demo__loading-percent" id="predictionLoadingPercent">0%</span></div>
+            <div class="vital-demo__progress" role="progressbar" aria-label="Model loading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="vital-demo__progress-bar" id="predictionProgressBar" style="width:0"></div></div>
+            <div class="vital-demo__load-row"><button class="vital-demo__load" id="predictionLoad" type="button" aria-controls="predictionIframe" aria-expanded="false">Start my experiment</button></div>
           </div>
         </div>
         <iframe class="vital-demo__frame" id="predictionIframe" data-src="/assets/vital-signs-predict/?ui=3" title="Browser-based vital sign prediction demo" allow="camera" allowfullscreen aria-hidden="true" tabindex="-1"></iframe>
@@ -143,13 +138,12 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
   (function () {
     var frame = document.getElementById('predictionIframe');
     var wrapper = document.getElementById('predictionFrameWrap');
-    var startButton = document.getElementById('predictionStart');
-    var preview = document.getElementById('predictionPreview');
+    var loadButton = document.getElementById('predictionLoad');
     var loadingStatus = document.getElementById('predictionLoadingStatus');
     var loadingPercent = document.getElementById('predictionLoadingPercent');
     var progressBar = document.getElementById('predictionProgressBar');
     var progress = document.querySelector('.vital-demo__progress');
-    var currentProgress = 8;
+    var currentProgress = 0;
     var fallbackTimer;
     var modelPollTimer;
     var readinessTimer;
@@ -162,20 +156,26 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
       if (loadingStatus && label) loadingStatus.textContent = label;
     }
     function markReady() {
-      if (wrapper.classList.contains('is-ready')) return;
+      if (wrapper.classList.contains('is-started')) return;
       window.clearInterval(fallbackTimer);
       window.clearInterval(modelPollTimer);
       window.clearTimeout(readinessTimer);
       setProgress(100, 'Models ready');
       window.setTimeout(function () {
-        wrapper.classList.add('is-ready');
-        startButton.disabled = false;
-        startButton.textContent = 'Start my experiment';
+        wrapper.classList.remove('is-loading');
+        wrapper.classList.add('is-started');
+        loadButton.setAttribute('aria-expanded', 'true');
+        frame.removeAttribute('aria-hidden');
+        frame.removeAttribute('tabindex');
+        frame.focus();
       }, 320);
     }
     function startModelLoad() {
       if (modelLoadStarted) return;
       modelLoadStarted = true;
+      wrapper.classList.add('is-loading');
+      loadButton.disabled = true;
+      loadButton.textContent = 'Loading models…';
       setProgress(20, 'Preview ready. Preparing TensorFlow.js…');
       frame.src = frame.getAttribute('data-src');
       fallbackTimer = window.setInterval(function () {
@@ -183,7 +183,7 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
       }, 700);
       readinessTimer = window.setTimeout(markReady, 18000);
     }
-    if (frame && wrapper && startButton) {
+    if (frame && wrapper && loadButton) {
       frame.addEventListener('load', function () {
         if (!modelLoadStarted || !frame.getAttribute('src')) return;
         setProgress(32, 'Loading TensorFlow.js…');
@@ -211,30 +211,7 @@ excerpt: "An example of deploying a deep learning model in the browser using Ten
         setProgress(event.data.progress, event.data.label);
         if (event.data.progress >= 100) markReady();
       });
-      if (preview) {
-        if (preview.complete) {
-          if (preview.decode) preview.decode().catch(function () {}).then(startModelLoad);
-          else startModelLoad();
-        } else {
-          preview.addEventListener('load', function () {
-            if (preview.decode) preview.decode().catch(function () {}).then(startModelLoad);
-            else startModelLoad();
-          }, { once: true });
-          preview.addEventListener('error', startModelLoad, { once: true });
-        }
-      } else {
-        startModelLoad();
-      }
-      startButton.addEventListener('click', function () {
-        if (startButton.disabled) {
-          return;
-        }
-        wrapper.classList.add('is-started');
-        startButton.setAttribute('aria-expanded', 'true');
-        frame.removeAttribute('aria-hidden');
-        frame.removeAttribute('tabindex');
-        frame.focus();
-      });
+      loadButton.addEventListener('click', startModelLoad);
     }
   }());
 </script>
