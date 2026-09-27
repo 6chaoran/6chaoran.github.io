@@ -4,18 +4,31 @@
 	margin-right: auto;
 }
 
+.site-logo img {
+	width: 2.5rem;
+	height: 2.5rem;
+	max-height: none;
+	object-fit: contain;
+}
+
 #main {
 	max-width: 1860px;
 	margin-left: auto;
 	margin-right: auto;	
 }
 
-.sticky {
-	left: 3em;
+.post-page #main {
+	max-width: 90rem;
 }
 
 .page {
-	font-size: 0.8em;
+	font-size: 1em;
+}
+
+.page__meta,
+.toc .nav__title,
+.toc__menu {
+	font-size: 0.875rem;
 }
 
 :root {
