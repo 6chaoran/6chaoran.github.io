@@ -16,14 +16,14 @@ locale                   : "en-US"
 title                    : "Chaoran's Applied AI Notes"
 title_separator          : "|"
 subtitle                 : "AI applications, architecture, system design, and working prototypes"
-name                     : &name "Chaoran Liu" # &name is a YAML anchor which can be *referenced later
+name                     : &name "Chaoran" # &name is a YAML anchor which can be *referenced later
 description              : &description "Practical notes for turning AI ideas into working pilots—and pilots into production systems."
 url                      : https://www.ichaoran.com #https://6chaoran.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "6chaoran"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/chaoran-mark.png" # path of logo image to display in the masthead
-logo_dark                : "/assets/images/chaoran-mark.png"
+logo                     : "/assets/favicon/chaoran-mark-512.png" # path of logo image to display in the masthead
+logo_dark                : "/assets/favicon/chaoran-mark-512.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 200
@@ -89,7 +89,7 @@ facebook:
   username               : #&facebook "michaelrose"
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/chaoran-mark.png" # Open Graph/Twitter default site image
+og_image                 : "/assets/favicon/chaoran-mark-512.png" # Open Graph/Twitter default site image
 # For specifying social profiles, used in _includes/seo.html
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:

@@ -5,13 +5,10 @@ layout: archive
 <div class="editorial-index">
   <header class="editorial-index__intro">
     <p class="fieldbook-kicker">Writing</p>
-    <h1>Notes from building applied AI</h1>
-    <p>Architecture, evaluation, prototypes, production systems, and the lessons that connect them.</p>
-  </header>
 
   {% assign current_posts = site.posts | where_exp: "post", "post.pillar != 'archive'" %}
   <section aria-labelledby="current-writing">
-    <div class="fieldbook-section__heading"><h2 id="current-writing">Current writing</h2><span>{{ current_posts | size }} notes</span></div>
+    <div class="fieldbook-section__heading"><h2 id="current-writing">Notes from building applied AI</h2><span>{{ current_posts | size }} notes</span></div>
     <div class="editorial-list">
       {% for post in current_posts %}
         <article class="editorial-list__item">
@@ -19,7 +16,6 @@ layout: archive
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b" }}<strong>{{ post.date | date: "%Y" }}</strong></time>
           </div>
           <div class="editorial-list__body">
-            <p class="fieldbook-meta">{{ post.format | default: "article" | replace: '-', ' ' }}</p>
             <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
             <p>{{ post.excerpt | markdownify | strip_html | truncate: 190 }}</p>
           </div>

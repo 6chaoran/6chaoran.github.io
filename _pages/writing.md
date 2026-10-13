@@ -1,7 +1,7 @@
 ---
 title: "Writing"
 show_title: false
-permalink: /year-archive/
+permalink: /writing/
 layout: writing
 author_profile: false
 ---

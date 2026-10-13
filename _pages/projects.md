@@ -96,9 +96,6 @@ projects:
   <section class="projects-intro" aria-labelledby="projects-intro-copy">
     <div class="projects-intro__content">
       <p class="projects-eyebrow">Selected work · {{ page.projects | size }} projects</p>
-      <p id="projects-intro-copy" class="projects-intro__copy">
-        Applied AI and data products built around practical decisions, privacy-aware workflows, and useful tools. Recent work leads; earlier projects remain as a record of learning in public.
-      </p>
     </div>
   </section>
 
@@ -124,8 +121,6 @@ projects:
           <p class="project-row__meta"><time datetime="{{ project.updated }}">Updated {{ project.updated | date: "%b %Y" }}</time> · {{ project.status }}</p>
           <h2><a href="{{ project.project_url }}"{% if project.project_url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ project.title }}</a></h2>
           <p class="project-row__summary">{{ project.summary }}</p>
-          <div class="project-details"><div><dt>Role</dt><dd>{{ project.role }}</dd></div><div><dt>Outcome</dt><dd>{{ project.outcome }}</dd></div></div>
-
           <ul class="project-tags" aria-label="Technologies used">
             {% for tag in project.tags %}
               <li>{{ tag }}</li>
@@ -173,11 +168,11 @@ projects:
     --projects-copy: #3e4a56;
     --projects-summary: #4f5a65;
     --projects-meta: #75818c;
-    --projects-tag-border: #acd0da;
-    --projects-tag-text: #317284;
-    --projects-tag-surface: #f8fcfd;
+    --projects-tag-border: var(--brand-border);
+    --projects-tag-text: var(--brand-tag-text);
+    --projects-tag-surface: var(--brand-tint);
     --projects-card-shadow: 0 0.25rem 1rem rgba(28, 48, 61, 0.05);
-    --projects-card-hover-border: #b8cbd2;
+    --projects-card-hover-border: var(--brand-border);
     --projects-card-hover-shadow: 0 0.8rem 2rem rgba(28, 48, 61, 0.1);
     max-width: 82rem;
     color: var(--projects-text);
@@ -193,11 +188,7 @@ projects:
     --projects-copy: #c3d0d6;
     --projects-summary: #b4c2c9;
     --projects-meta: #a8b6bf;
-    --projects-tag-border: #397083;
-    --projects-tag-text: #9ed5df;
-    --projects-tag-surface: #1d343d;
     --projects-card-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.22);
-    --projects-card-hover-border: #4e7f8c;
     --projects-card-hover-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.34);
   }
 
@@ -326,8 +317,9 @@ projects:
     text-decoration: none;
   }
 
-  .project-row__content h2 a:hover {
+  .projects-page .project-row__content h2 a:hover {
     color: var(--projects-accent);
+    text-decoration: none;
   }
 
   .project-row__summary {
@@ -385,7 +377,7 @@ projects:
   }
 
   .project-action:focus-visible {
-    outline: 3px solid rgba(8, 124, 152, 0.25);
+    outline: 3px solid var(--brand-focus);
     outline-offset: 3px;
   }
 

@@ -13,6 +13,7 @@ output/
 scripts/
 *api_key
 .agents
+videos/*
 
 # Used by dotenv library to load environment variables.
 # .env
@@ -67,3 +68,4 @@ build-iPhoneSimulator/
 /.jekyll-cache/
 /.jekyll-metadata
 /.sass-cache/
+/docs
