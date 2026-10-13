@@ -27,11 +27,20 @@
   {% endif %}
 
   <div class="author__content">
+    <div class="author__heading">
     {% if author.home %}
       <a href="{{ author_link }}"><h3 class="author__name" itemprop="name">{{ author.name }}</h3></a>
     {% else %}
       <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% endif %}
+    <span class="author__name-links social-icons">
+      {% for link in author.links %}
+        {% if link.label == 'LinkedIn' or link.label == 'GitHub' %}
+          <a href="{{ link.url }}" aria-label="{{ link.label | escape }}" title="{{ link.label | escape }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon }}" aria-hidden="true"></i></a>
+        {% endif %}
+      {% endfor %}
+    </span>
+    </div>
     {% if author.bio %}
       <div class="author__bio" itemprop="description">
         {{ author.bio | markdownify }}
@@ -41,7 +50,7 @@
 
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">{{ site.data.ui-text[site.locale].follow_label | remove: ":" | default: "Follow" }}</button>
-    <ul class="author__urls social-icons">
+    <ul class="author__urls social-icons author__urls--compact">
       {% if author.location %}
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
           <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ author.location }}</span>
@@ -50,8 +59,8 @@
 
       {% if author.links %}
         {% for link in author.links %}
-          {% if link.label and link.url %}
-            <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+          {% if link.label and link.url and link.label != 'LinkedIn' and link.label != 'GitHub' %}
+            <li><a href="{{ link.url }}" aria-label="{{ link.label | escape }}" title="{{ link.label | escape }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i></a></li>
           {% endif %}
         {% endfor %}
       {% endif %}

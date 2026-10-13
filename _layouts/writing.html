@@ -19,7 +19,6 @@ layout: archive
             <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
             <p>{{ post.excerpt | markdownify | strip_html | truncate: 190 }}</p>
           </div>
-          <a class="editorial-list__arrow" aria-label="Read {{ post.title | escape }}" href="{{ post.url | relative_url }}"><span>Read</span></a>
         </article>
       {% endfor %}
     </div>

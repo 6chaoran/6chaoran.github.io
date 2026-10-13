@@ -12,6 +12,7 @@
 </script>
 
 <!-- For all browsers -->
+<link rel="stylesheet" href="{{ '/assets/vendor/fontawesome/css/all.min.css' | relative_url }}">
 {% if site.minimal_mistakes_skin_dark %}
   <meta name="color-scheme" content="light dark">
   <script>
@@ -20,7 +21,7 @@
       try { savedTheme = localStorage.getItem("site-theme"); } catch (error) {}
       var theme = savedTheme === "light" || savedTheme === "dark"
         ? savedTheme
-        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        : "dark";
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;
     })();

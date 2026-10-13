@@ -41,10 +41,4 @@
 
   applyTheme(root.dataset.theme === "dark" ? "dark" : "light", false);
 
-  var systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-  systemTheme.addEventListener("change", function (event) {
-    var hasSavedPreference = false;
-    try { hasSavedPreference = Boolean(localStorage.getItem(storageKey)); } catch (error) {}
-    if (!hasSavedPreference) applyTheme(event.matches ? "dark" : "light", false);
-  });
 })();
